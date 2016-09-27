@@ -8,9 +8,17 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
-    <title>$Title$</title>
+    <title>ThePlaceOfStuff</title>
   </head>
   <body>
-  $PRETTY LADIES$
+
+    <h1>PRETTY LADIES</h1>
+
+    <h2>I like it</h2>
+
+     <p>Lite vanlig text</p>
+
+    <a href="http://mobileimages.lowes.com/product/converted/891347/891347002501.jpg">Link to a sink</a>
+
   </body>
 </html>
