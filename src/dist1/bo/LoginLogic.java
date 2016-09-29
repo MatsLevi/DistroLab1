@@ -9,7 +9,7 @@ import dist1.db.TokenGet;
  */
 public class LoginLogic {
     
-    public Token authorize() {
-        return TokenGet.getToken();
+    public Token authorize(String username, String pw) {
+        return TokenGet.getToken(username, pw);
     }
 }

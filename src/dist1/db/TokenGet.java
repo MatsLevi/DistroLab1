@@ -17,7 +17,7 @@ public class TokenGet extends Token{
         super();
     }
     
-    public static Token getToken() {
+    public static Token getToken(String username, String pw) {
         // TODO change with db data
         return new TokenGet();
     }
