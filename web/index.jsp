@@ -20,9 +20,11 @@
 
     <a href="http://mobileimages.lowes.com/product/converted/891347/891347002501.jpg">Link to a sink</a>
     
-    <br></br>
-    
+    <br><br>
     The time on the server is <%= new java.util.Date() %>
-
+    <br><br>
+    
+    <%! dist1.Fake f = new dist1.Fake(); %>
+    
   </body>
 </html>

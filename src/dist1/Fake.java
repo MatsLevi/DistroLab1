@@ -1,9 +1,11 @@
+package dist1;
+
 /**
  * @author Mats, Gunnlaugur
  */
-public class fake {
+public class Fake {
     
-    public fake() {
+    public Fake() {
         System.out.println("asdasdasd");
     }
 }
