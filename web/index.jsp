@@ -19,7 +19,9 @@
      <p>Lite vanlig text v23 omg testing</p>
 
     <a href="http://mobileimages.lowes.com/product/converted/891347/891347002501.jpg">Link to a sink</a>
-    
+
+    <a herf="login.jsp">Login</a>
+
     <br><br>
     The time on the server is <%= new java.util.Date() %>
     <br><br>

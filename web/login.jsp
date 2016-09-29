@@ -12,5 +12,24 @@
 </head>
 <body>
 
+    <br><br>
+
+    <h2>Login or register on the server</h2>
+
+    <br><br>
+
+    <p>Enter username and password to login or register</p>
+
+    <form>
+        Username: <br>
+
+        <input type="text" name="username"><br>
+
+        Last name:<br>
+
+        <input type="text" name="password">
+
+    </form>
+
 </body>
 </html>
