@@ -27,7 +27,10 @@
 
         Last name:<br>
 
-        <input type="text" name="password">
+        <input type="text" name="password"><br>
+
+        <input type="submit" value="Login">
+        <input type="submit" value="Register">
 
     </form>
 
