@@ -9,11 +9,12 @@ import dist1.bo.Token;
  */
 public class TokenGet extends Token{
     
-    public TokenGet() {
-        super();
+    public TokenGet(String id, long timeStamp) {
+        super(id, timeStamp);
     }
     
     public static Token getToken() {
-        return new TokenGet();
+        // TODO change with db data
+        return new TokenGet("temp", -1);
     }
 }

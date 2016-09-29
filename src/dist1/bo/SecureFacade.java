@@ -9,7 +9,7 @@ import dist1.ui.TokenView;
  */
 public class SecureFacade {
     
-    private LoginLogic login;
+    private final LoginLogic login;
     
     public SecureFacade() {
         login = new LoginLogic();
@@ -18,6 +18,7 @@ public class SecureFacade {
     public TokenView authorizeRequest() {
         Token t = login.authorize();
         
-        return new TokenView();
+        // Undviker att skicka orginal referencen av strängen.
+        return new TokenView(new String(t.getId().toCharArray()), t.getTimeStamp());
     }
 }
