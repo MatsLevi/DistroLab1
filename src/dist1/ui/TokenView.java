@@ -7,10 +7,23 @@ package dist1.ui;
  */
 public class TokenView {
 
-    private String id;
-    private long timeStamp;
+    private final String id;
+    private final long timeStamp;
+    private final boolean authorized;
     
-    public TokenView(String id, long timeStamp) {
-        this.id = id; this.timeStamp = timeStamp;
+    public TokenView(String id, long timeStamp, boolean authorized) {
+        this.id = id; this.timeStamp = timeStamp; this.authorized = authorized;
+    }
+    
+    public String getId() {
+        return id;
+    }
+    
+    public long getTimeStamp() {
+        return timeStamp;
+    }
+    
+    public boolean getAuthorized() {
+        return authorized;
     }
 }

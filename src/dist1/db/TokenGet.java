@@ -13,8 +13,12 @@ public class TokenGet extends Token{
         super(id, timeStamp);
     }
     
+    public TokenGet() {
+        super();
+    }
+    
     public static Token getToken() {
         // TODO change with db data
-        return new TokenGet("temp", -1);
+        return new TokenGet();
     }
 }
