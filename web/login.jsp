@@ -22,8 +22,9 @@
     <br><br>
 
     <p>Enter username and password to login or register</p>
-    
-    <form action = "login.jsp">
+
+
+    <form action>
         Username: <br>
 
         <input type="text" name="username"><br>
@@ -36,6 +37,7 @@
 
         <input type="submit" value="Register">
 
+        <%--<%= SF.authorizeRequest(request.getParameter("username"), request.getParameter("password"))%>--%>
     </form>
 
 </body>
