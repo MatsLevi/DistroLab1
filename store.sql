@@ -1,6 +1,6 @@
 drop database store;
-create database if not exists store;
 
+create database if not exists store;
 use store;
 
 create table if not exists Login(
