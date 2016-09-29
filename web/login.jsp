@@ -12,6 +12,8 @@
 </head>
 <body>
 
+<%! dist1.bo.SecureFacade SF = new dist1.bo.SecureFacade(); %>
+
     <br><br>
 
     <h2>Login or register on the server</h2>
@@ -23,11 +25,11 @@
     <form>
         Username: <br>
 
-        <input type="text" name="username"><br>
+        <input type="text" name="username" value=""><br>
 
         Last name:<br>
 
-        <input type="text" name="password"><br>
+        <input type="text" name="password" value=""><br>
 
         <input type="submit" value="Login">
         <input type="submit" value="Register">
