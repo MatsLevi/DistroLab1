@@ -22,7 +22,7 @@
     <br><br>
 
     <p>Enter username and password to login or register</p>
-
+    
     <form action = "login.jsp">
         Username: <br>
 
