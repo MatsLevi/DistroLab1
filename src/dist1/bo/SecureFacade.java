@@ -16,6 +16,7 @@ public class SecureFacade {
     }
     
     public TokenView authorizeRequest(String username, String pw) {
+        System.out.println("kom in i authorize: " + username + " " + pw);
         Token t = login.authorize(username, pw);
 
         // Undviker att skicka orginal referencen av strängen.
