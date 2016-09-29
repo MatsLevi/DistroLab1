@@ -1,6 +1,6 @@
 <%--
   Created by IntelliJ IDEA.
-  User: mats
+  User: Mats & Gunnlaugur
   Date: 9/29/16
   Time: 10:08 AM
   To change this template use File | Settings | File Templates.
@@ -12,7 +12,8 @@
 </head>
 <body>
 
-<%! dist1.bo.SecureFacade SF = new dist1.bo.SecureFacade(); %>
+
+    <%! dist1.bo.SecureFacade SF = new dist1.bo.SecureFacade(); %>
 
     <br><br>
 
@@ -25,11 +26,11 @@
     <form>
         Username: <br>
 
-        <input type="text" name="username" value=""><br>
+        <input type="text" name="username"><br>
 
         Last name:<br>
 
-        <input type="text" name="password" value=""><br>
+        <input type="text" name="password"><br>
 
         <input type="submit" value="Login">
         <input type="submit" value="Register">
