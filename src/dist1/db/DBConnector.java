@@ -24,9 +24,9 @@ public class DBConnector {
         username = "Unknown"; pw = "NotSet";
     }
     
-    public void connect(String table) throws Exception {
+    public void connect(String database) throws Exception {
         this.username = "login"; this.pw = "123456";
-        String Server = "jdbc:mysql://localhost:3306/" + table + "?UseClientEnc=UTF8";
+        String Server = "jdbc:mysql://localhost:3306/" + database + "?UseClientEnc=UTF8";
         con = null;
         
         try {
