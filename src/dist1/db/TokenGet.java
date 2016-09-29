@@ -11,6 +11,7 @@ public class TokenGet extends Token{
     
     public TokenGet(String id, long timeStamp) {
         super(id, timeStamp);
+
     }
     
     public TokenGet() {

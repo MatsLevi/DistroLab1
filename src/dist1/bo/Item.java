@@ -17,5 +17,10 @@ public class Item {
         this.type = type;
     }
 
-    
+    protected Item(){
+        this.name = null;
+        this.price = 0;
+        this.type = null;
+    }
+
 }
