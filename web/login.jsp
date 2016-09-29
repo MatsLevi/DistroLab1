@@ -23,16 +23,17 @@
 
     <p>Enter username and password to login or register</p>
 
-    <form>
+    <form action = "login.jsp">
         Username: <br>
 
         <input type="text" name="username"><br>
 
-        Last name:<br>
+        Password:<br>
 
         <input type="password" name="password"><br>
 
         <input type="submit" value="Login">
+
         <input type="submit" value="Register">
 
     </form>
