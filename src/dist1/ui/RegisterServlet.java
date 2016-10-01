@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * Created by mats & Gunnlagur on 10/1/16.
+ * Created by mats & Gunnlaugur on 10/1/16.
  */
 @WebServlet("/registerServlet")
 public class RegisterServlet extends HttpServlet {

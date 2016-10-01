@@ -21,4 +21,8 @@ public class SecureFacade {
             return new TokenView(null, t.getTimeStamp(), t.getAuthorized());
         }
     }
+
+    public static void registerUser(){
+        
+    }
 }
