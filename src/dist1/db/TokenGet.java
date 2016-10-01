@@ -2,6 +2,8 @@
 package dist1.db;
 
 import dist1.bo.Token;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -18,9 +20,16 @@ public class TokenGet extends Token{
     }
 
     public static Token getToken(String username, String pw) {
-        System.out.println("Token username: " + username + " \nToken pw: " + pw);
-
-        // TODO change with db connector
+        try {
+            DBConnector db = new DBMYSQLConnector();
+            db.connect("store", "login", "123456");
+            
+            
+        } catch (Exception ex) {
+            return new TokenGet();
+        }
+        
+        // TODO remove after try is completed!
         return new TokenGet();
     }
 }
