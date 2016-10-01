@@ -44,13 +44,14 @@ public class DBMYSQLConnector implements DBConnector{
 
     @Override
     public int getUser(String username, String password) {
-        
+        //TODO fix
         
         return -1;
     }
 
     @Override
     public boolean addUser(String username, String password) {
+        //TODO fix
         return false;
     }
 }
