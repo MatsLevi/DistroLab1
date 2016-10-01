@@ -22,8 +22,7 @@ public class LoginServlet extends HttpServlet{
             return;
         
         System.out.println("Username: " + request.getParameter("username") + "\nPassword: " + request.getParameter("password"));
-        
-        SecureFacade sf = new SecureFacade();
-        sf.authorizeRequest(request.getParameter("username"), request.getParameter("password"));
+
+        SecureFacade.authorizeRequest(request.getParameter("username"), request.getParameter("password"));
     }
 }

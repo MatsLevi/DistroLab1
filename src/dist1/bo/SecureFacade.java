@@ -9,13 +9,9 @@ import dist1.ui.TokenView;
  */
 public class SecureFacade {
     
-    private final LoginLogic login;
-    
-    public SecureFacade() {
-        login = new LoginLogic();
-    }
-    
-    public TokenView authorizeRequest(String username, String pw) {
+    public static TokenView authorizeRequest(String username, String pw) {
+        LoginLogic login = new LoginLogic();
+        
         System.out.println("kom in i authorize: " + username + " " + pw);
         Token t = login.authorize(username, pw);
 
