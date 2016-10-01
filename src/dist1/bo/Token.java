@@ -7,22 +7,22 @@ package dist1.bo;
  */
 public class Token {
     
-    private final String id;
+    private final int id;
     private final long timeStamp;
     private final boolean authorized;
     
-    protected Token(String id, long timeStamp) {
+    protected Token(int id, long timeStamp) {
         this.id = id; this.timeStamp = timeStamp;
         this.authorized = true;
     }
     
     protected Token() {
-        id = null;
+        id = -1;
         timeStamp = -1;
         authorized = false;
     }
     
-    protected String getId() {
+    protected int getId() {
         return id;
     }
     

@@ -9,7 +9,7 @@ import dist1.bo.Token;
  */
 public class TokenGet extends Token{
     
-    private TokenGet(String id, long timeStamp) {
+    private TokenGet(int id, long timeStamp) {
         super(id, timeStamp);
     }
 

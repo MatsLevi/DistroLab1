@@ -4,8 +4,6 @@ package dist1.db;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -42,5 +40,17 @@ public class DBMYSQLConnector implements DBConnector{
             con.close();
             System.out.println("Connection closed!");
         } catch (SQLException ex) {}
+    }
+
+    @Override
+    public int getUser(String username, String password) {
+        
+        
+        return -1;
+    }
+
+    @Override
+    public boolean addUser(String username, String password) {
+        return false;
     }
 }
