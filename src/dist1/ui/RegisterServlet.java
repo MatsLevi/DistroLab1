@@ -15,6 +15,8 @@ import java.io.IOException;
 @WebServlet("/registerServlet")
 public class RegisterServlet extends HttpServlet {
 
+    boolean regResult;
+
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         if(request.getParameter("username") == null || request.getParameter("password") == null)
@@ -22,6 +24,6 @@ public class RegisterServlet extends HttpServlet {
 
         System.out.println("In register: Username: " + request.getParameter("username") + "\nPassword: " + request.getParameter("password"));
 
-        SecureFacade.authorizeRequest(request.getParameter("username"), request.getParameter("password"));
+        regResult = SecureFacade.registerUser(request.getParameter("username"), request.getParameter("password"));
     }
 }

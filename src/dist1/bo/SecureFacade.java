@@ -22,7 +22,13 @@ public class SecureFacade {
         }
     }
 
-    public static void registerUser(){
-        
+    public static boolean registerUser(String username, String pw){
+
+        LoginLogic login = new LoginLogic();
+        boolean regResult;
+
+        regResult = login.register(username, pw);
+
+        return regResult;
     }
 }
