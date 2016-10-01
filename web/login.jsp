@@ -12,9 +12,6 @@
 </head>
 <body>
 
-
-    <%! dist1.bo.SecureFacade SF = new dist1.bo.SecureFacade(); %>
-
     <br><br>
 
     <h2>Login or register on the server</h2>
@@ -23,8 +20,7 @@
 
     <p>Enter username and password to login or register</p>
 
-
-    <form action>
+    <form method="post" action="${pageContext.request.contextPath}/loginservlet">
         Username: <br>
 
         <input type="text" name="username"><br>
@@ -33,12 +29,9 @@
 
         <input type="password" name="password"><br>
 
-        <input type="submit" value="Login">
+        <input type="submit" name="button1" value="Login">
 
-        <input type="submit" value="Register">
-
-        <%--<%= SF.authorizeRequest(request.getParameter("username"), request.getParameter("password"))%>--%>
+        <input type="submit" name="button2" value="Register">
     </form>
-
 </body>
 </html>

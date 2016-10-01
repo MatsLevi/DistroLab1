@@ -9,17 +9,18 @@ import dist1.bo.Token;
  */
 public class TokenGet extends Token{
     
-    public TokenGet(String id, long timeStamp) {
+    private TokenGet(String id, long timeStamp) {
         super(id, timeStamp);
-
     }
-    
-    public TokenGet() {
+
+    private TokenGet() {
         super();
     }
-    
+
     public static Token getToken(String username, String pw) {
-        // TODO change with db data
+        System.out.println("Token username: " + username + " \nToken pw: " + pw);
+
+        // TODO change with db connector
         return new TokenGet();
     }
 }
