@@ -12,7 +12,7 @@ public class ItemGet extends Item {
     }
 
     private ItemGet(){super();}
-    
+
     public static ItemGet getItem(){
         return new ItemGet();
     }
