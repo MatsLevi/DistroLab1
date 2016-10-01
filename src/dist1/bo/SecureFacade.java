@@ -17,4 +17,14 @@ public class SecureFacade {
         // Undviker att skicka orginal referencen av strängen.
         return new TokenView(t.getId(), t.getTimeStamp(), t.getAuthorized());
     }
+
+    public static boolean registerUser(String username, String pw){
+
+        LoginLogic login = new LoginLogic();
+        boolean regResult;
+
+        regResult = login.register(username, pw);
+
+        return regResult;
+    }
 }

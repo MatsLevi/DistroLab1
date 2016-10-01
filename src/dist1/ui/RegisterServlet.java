@@ -10,10 +10,12 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * Created by mats & Gunnlagur on 10/1/16.
+ * Created by mats & Gunnlaugur on 10/1/16.
  */
 @WebServlet("/registerServlet")
 public class RegisterServlet extends HttpServlet {
+
+    boolean regResult;
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -22,6 +24,6 @@ public class RegisterServlet extends HttpServlet {
 
         System.out.println("In register: Username: " + request.getParameter("username") + "\nPassword: " + request.getParameter("password"));
 
-        SecureFacade.authorizeRequest(request.getParameter("username"), request.getParameter("password"));
+        regResult = SecureFacade.registerUser(request.getParameter("username"), request.getParameter("password"));
     }
 }
