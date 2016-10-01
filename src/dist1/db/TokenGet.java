@@ -18,13 +18,18 @@ public class TokenGet extends Token{
     }
 
     public static Token getToken(String username, String pw) {
+        DBConnector db = null;
+        
         try {
-            DBConnector db = new DBMYSQLConnector();
+            db = new DBMYSQLConnector();
             db.connect("store", "login", "123456");
             
             
+            
+            db.disconnect();
         } catch (Exception ex) {
             System.out.println("getToken: " + ex.toString());
+            if(db != null) db.disconnect();
             
             return new TokenGet();
         }
