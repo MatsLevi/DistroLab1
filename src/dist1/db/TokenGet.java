@@ -2,8 +2,6 @@
 package dist1.db;
 
 import dist1.bo.Token;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -26,6 +24,8 @@ public class TokenGet extends Token{
             
             
         } catch (Exception ex) {
+            System.out.println("getToken: " + ex.toString());
+            
             return new TokenGet();
         }
         

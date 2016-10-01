@@ -26,7 +26,5 @@
     The time on the server is <%= new java.util.Date() %>
     <br><br>
     
-    <%! dist1.Fake f = new dist1.Fake(); %>
-    
   </body>
 </html>

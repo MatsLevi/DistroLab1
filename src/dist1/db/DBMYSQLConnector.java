@@ -3,6 +3,9 @@ package dist1.db;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -25,17 +28,19 @@ public class DBMYSQLConnector implements DBConnector{
     }
     
     @Override
-    public void connect(String dbName, String username, String password) throws Exception {
+    public void connect(String dbName, String username, String password) throws SQLException {
         this.username = username; this.pw = password;
         String Server = "jdbc:mysql://localhost:3306/" + dbName + "?UseClientEnc=UTF8";
-        con = null;
         
-        try {
-            con = DriverManager.getConnection(Server, username, pw);
-            System.out.println("Connected to db");
-        } catch(Exception e) {
-            System.out.println("Failed to connect");
-            throw new Exception("Connection Failed! " + e.toString());
-        }
+        con = DriverManager.getConnection(Server, username, pw);
+        System.out.println("Connected to db");
+    }
+
+    @Override
+    public void disconnect() {
+        try{
+            con.close();
+            System.out.println("Connection closed!");
+        } catch (SQLException ex) {}
     }
 }
