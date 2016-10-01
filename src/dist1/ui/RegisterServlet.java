@@ -10,12 +10,13 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * Created by mats & Gunnlaugur on 10/1/16.
+ *
+ * @author Mats, Gunnlaugur
  */
 @WebServlet("/registerServlet")
 public class RegisterServlet extends HttpServlet {
 
-    boolean regResult;
+    private boolean regResult;
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

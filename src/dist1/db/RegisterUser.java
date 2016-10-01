@@ -1,7 +1,8 @@
 package dist1.db;
 
 /**
- * Created by mats on 10/1/16.
+ *
+ * @author Mats, Gunnlaugur
  */
 public class RegisterUser {
 
@@ -14,7 +15,7 @@ public class RegisterUser {
 
             db.disconnect();
         } catch (Exception ex) {
-            System.out.println("DB close error" + ex.toString());
+            System.out.println("DB error" + ex.toString());
             if(db != null) db.disconnect();
 
             return false;

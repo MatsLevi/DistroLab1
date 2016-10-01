@@ -19,7 +19,6 @@ public class SecureFacade {
     }
 
     public static boolean registerUser(String username, String pw){
-
         LoginLogic login = new LoginLogic();
         boolean regResult;
 
