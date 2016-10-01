@@ -31,7 +31,20 @@
 
         <input type="submit" name="button1" value="Login">
 
-        <input type="submit" name="button2" value="Register">
     </form>
+
+    <form method="post" action="${pageContext.request.contextPath}/registerServlet">
+        Username: <br>
+
+        <input type="text" name="username"><br>
+
+        Password:<br>
+
+        <input type="password" name="password"><br>
+
+        <input type="submit" name="button2" value="Register">
+
+    </form>
+
 </body>
 </html>
