@@ -26,6 +26,26 @@ public class Item {
         this.type = null;
     }
     
+    public String getName() {
+        return name;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public int getId() {
+        return id;
+    }
+    
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
