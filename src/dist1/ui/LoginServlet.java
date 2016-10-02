@@ -23,8 +23,9 @@ public class LoginServlet extends HttpServlet{
         
         System.out.println("In login: Username: " + request.getParameter("username") + "\nPassword: " + request.getParameter("password"));
 
-        SecureFacade.authorizeRequest(request.getParameter("username"), request.getParameter("password"));
-
+        TokenView tv = SecureFacade.authorizeRequest(request.getParameter("username"), request.getParameter("password"));
+        System.out.println("TokenView id: " + tv.getId() + "\nTokenView timestamp: " + tv.getTimeStamp() + "\nTokenView auth: " + tv.getAuthorized());
+        
         request.getRequestDispatcher("index.jsp").forward(request, response);
     }
 }

@@ -14,7 +14,6 @@ public class SecureFacade {
 
         Token t = login.authorize(username, pw);
 
-        // Undviker att skicka orginal referencen av strängen.
         return new TokenView(t.getId(), t.getTimeStamp(), t.getAuthorized());
     }
 
