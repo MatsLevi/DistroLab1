@@ -6,8 +6,7 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.logging.Level;
-import java.util.logging.Logger;
+import java.util.ArrayList;
 
 /**
  *
@@ -96,5 +95,46 @@ public class DBMYSQLConnector implements DBConnector{
                 } catch (SQLException ex) {}
             }
         }
+    }
+
+    @Override
+    public ArrayList<ItemGet> getItems() {
+        ArrayList<ItemGet> items = new ArrayList<>();
+        Statement statement = null;
+        ResultSet result = null;
+        String name, type;
+        int price, quantity, id;
+        
+        try{
+            statement = con.createStatement();
+            String query = "select * from Item";
+            System.out.println("selectar: \n" + query);
+            result = statement.executeQuery(query);
+
+            while(result.next()) {
+                name = result.getObject(1).toString();
+                type = result.getObject(2).toString();
+                price = Integer.parseInt(result.getObject(3).toString());
+                quantity = Integer.parseInt(result.getObject(4).toString());
+                id = Integer.parseInt(result.getObject(5).toString());
+                
+                items.add(new ItemGet(name,type,price,quantity,id));
+            }
+        } catch(SQLException | NumberFormatException ex) {
+            System.out.println("Exception in getItems: " + ex.toString());
+        } finally {
+            if(statement != null) {
+                try {
+                    statement.close();
+                } catch (SQLException ex) {}
+            }
+            if(result != null) {
+                try {
+                    result.close();
+                } catch (SQLException ex) {}
+            }
+        }
+        
+        return items;
     }
 }

@@ -17,7 +17,7 @@ public class TokenGet extends Token{
         super();
     }
 
-    public static Token getToken(String username, String pw) {
+    public static TokenGet getToken(String username, String pw) {
         DBConnector db = null;
         int id;
         

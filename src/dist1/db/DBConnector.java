@@ -1,6 +1,8 @@
 
 package dist1.db;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Gunnlaugur, Mats
@@ -11,4 +13,5 @@ public interface DBConnector {
     public void disconnect();
     public int getUser(String username, String password);
     public boolean addUser(String username, String password);
+    public ArrayList<ItemGet> getItems();
 }

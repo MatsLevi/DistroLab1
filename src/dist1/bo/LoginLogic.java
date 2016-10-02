@@ -11,6 +11,9 @@ import dist1.db.TokenGet;
 public class LoginLogic {
     
     public Token authorize(String username, String pw) {
+        //TODO write down token on disk (to be used later for purchase)
+        // do so that authorize returns boolean instead of token.
+        
         return TokenGet.getToken(username, pw);
     }
 

@@ -1,20 +1,23 @@
 package dist1.bo;
 
 /**
- * Created by mats & Gunnlaugur on 9/29/16.
+ *
+ * @author Mats, Gunnlaugur
  */
 public class Item {
 
     private final String name;
     private final String type; //should prob be enum
-    private final float price;
+    private final int price;
     private int quantity;
     private int id;
 
-    protected Item(String name, float price, String type){
+    protected Item(String name, String type, int price, int quantity, int id){
         this.name = name;
-        this.price = price;
         this.type = type;
+        this.price = price;
+        this.quantity = quantity;
+        this.id = id;
     }
 
     protected Item(){
@@ -22,5 +25,4 @@ public class Item {
         this.price = 0;
         this.type = null;
     }
-
 }

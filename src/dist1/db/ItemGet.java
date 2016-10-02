@@ -3,17 +3,20 @@ package dist1.db;
 import dist1.bo.Item;
 
 /**
- * Created by mats on 9/29/16.
+ *
+ * @author Mats, Gunnlaugur
  */
 public class ItemGet extends Item {
 
-    private ItemGet(String name, float price, String type){
-        super(name, price, type);
+    protected ItemGet(String name, String type, int price, int quantity, int id) {
+        super(name, type, price, quantity, id);
     }
 
-    private ItemGet(){super();}
+    protected ItemGet() {
+        super();
+    }
 
-    public static ItemGet getItem(){
+    public static ItemGet getItem() {
         return new ItemGet();
     }
 }
