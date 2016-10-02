@@ -1,9 +1,7 @@
 <%--
-  Created by IntelliJ IDEA.
   User: mats, gunnlaugur
   Date: 9/27/16
   Time: 10:58 AM
-  To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
@@ -12,7 +10,7 @@
   </head>
   <body>
 
-    <h1>PRETTY LADIES</h1>
+    <h1>Header 1</h1>
 
     <h2>I like it</h2>
 
