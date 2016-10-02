@@ -16,12 +16,18 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/itemservlet")
 public class ItemServlet extends HttpServlet{
 
+    protected void getItems(){
+
+    }
+
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         /*if(request.getParameter("username") == null || request.getParameter("password") == null)
             return;*/
 
-        System.out.println("In item:" + request.getParameter("Kycking") + "\nSecond item:: " + request.getParameter("Oliver"));
+        System.out.println("In item:" + request.getParameter("Kyckling") + "\nSecond item:: " + request.getParameter("Oliver"));
+
+        request.getRequestDispatcher("basket.jsp").forward(request, response);
 
     }
 }
