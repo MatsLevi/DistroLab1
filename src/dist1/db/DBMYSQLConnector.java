@@ -3,6 +3,7 @@ package dist1.db;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
@@ -47,15 +48,40 @@ public class DBMYSQLConnector implements DBConnector{
 
     @Override
     public int getUser(String username, String password) {
-        //TODO fix
+        Statement statement = null;
+        ResultSet result = null;
         
-        return -1;
+        try{
+            statement = con.createStatement();
+            String query = "select id from Login where (username like '%" + username.toLowerCase() + "%' and pw like '%" + password.toLowerCase() + "%')";
+            System.out.println("selectar: \n" + query);
+            result = statement.executeQuery(query);
+            
+            result.next();
+            return Integer.parseInt(result.getObject(1).toString());
+        } catch(SQLException | NumberFormatException ex) {
+            System.out.println("Exception in getUser: " + ex.toString());
+            return -1;
+        } finally {
+            if(statement != null) {
+                try {
+                    statement.close();
+                } catch (SQLException ex) {}
+            }
+            if(result != null) {
+                try {
+                    result.close();
+                } catch (SQLException ex) {}
+            }
+        }
     }
 
     @Override
     public boolean addUser(String username, String password) {
+        Statement statement = null;
+        
         try{
-            Statement statement = con.createStatement();
+            statement = con.createStatement();
             String query = "insert into Login (username,pw) values ('" + username.toLowerCase() + "', '" + password.toLowerCase() + "')";
             System.out.println("insertar: \n" + query);
             statement.executeUpdate(query);
@@ -63,6 +89,12 @@ public class DBMYSQLConnector implements DBConnector{
         } catch (SQLException ex) {
             System.out.println("Exception in addUser: " + ex.toString());
             return false;
+        } finally {
+            if(statement != null) {
+                try {
+                    statement.close();
+                } catch (SQLException ex) {}
+            }
         }
     }
 }
