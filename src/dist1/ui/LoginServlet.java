@@ -27,5 +27,6 @@ public class LoginServlet extends HttpServlet{
         System.out.println("TokenView id: " + tv.getId() + "\nTokenView timestamp: " + tv.getTimeStamp() + "\nTokenView auth: " + tv.getAuthorized());
         
         request.getRequestDispatcher("index.jsp").forward(request, response);
+
     }
 }
