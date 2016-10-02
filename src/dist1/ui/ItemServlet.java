@@ -32,9 +32,7 @@ public class ItemServlet extends HttpServlet{
         /*if(request.getParameter("username") == null || request.getParameter("password") == null)
             return;*/
 
-        System.out.println("In item:" + request.getParameter("Kyckling") + "\nSecond item: " + request.getParameter("Oliver"));
-
-        getItems();
+        System.out.println("In item:" + request.getParameter("milk") + "\nSecond item: " + request.getParameter("Oliver"));
 
         request.getRequestDispatcher("basket.jsp").forward(request, response);
 
