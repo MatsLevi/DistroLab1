@@ -20,7 +20,8 @@ public class RegisterUser {
             return addSuccess;
         } catch (Exception ex) {
             System.out.println("DB error" + ex.toString());
-            if(db != null) db.disconnect();
+            if(db != null) 
+                db.disconnect();
 
             return false;
         }

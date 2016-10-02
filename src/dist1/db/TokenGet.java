@@ -19,22 +19,25 @@ public class TokenGet extends Token{
 
     public static Token getToken(String username, String pw) {
         DBConnector db = null;
+        int id;
         
         try {
             db = new DBMYSQLConnector();
             db.connect("store", "login", "123456");
             
-            
-            
+            id = db.getUser(username, pw);
             db.disconnect();
+            
+            if(id == -1)
+                return new TokenGet();
+            else
+                return new TokenGet(id, System.currentTimeMillis());
         } catch (Exception ex) {
             System.out.println("getToken: " + ex.toString());
-            if(db != null) db.disconnect();
+            if(db != null) 
+                db.disconnect();
             
             return new TokenGet();
         }
-        
-        // TODO remove after try is completed!
-        return new TokenGet();
     }
 }
