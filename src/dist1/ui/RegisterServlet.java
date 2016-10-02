@@ -27,7 +27,7 @@ public class RegisterServlet extends HttpServlet {
 
         regResult = SecureFacade.registerUser(request.getParameter("username"), request.getParameter("password"));
 
-
+        
         request.getRequestDispatcher("login.jsp").forward(request, response);
     }
 }
