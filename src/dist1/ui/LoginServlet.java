@@ -18,8 +18,11 @@ public class LoginServlet extends HttpServlet{
     
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        if(request.getParameter("username") == null || request.getParameter("password") == null)
+        if(request.getParameter("username") == null || request.getParameter("password") == null || 
+                request.getParameter("username").equals("") || request.getParameter("password").equals("")) {
+            request.getRequestDispatcher("login.jsp").forward(request, response);
             return;
+        }
         
         System.out.println("In login: Username: " + request.getParameter("username") + "\nPassword: " + request.getParameter("password"));
 
