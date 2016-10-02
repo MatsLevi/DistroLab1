@@ -54,15 +54,15 @@ public class DBMYSQLConnector implements DBConnector{
 
     @Override
     public boolean addUser(String username, String password) {
-        Statement statement = null;
-        
         try{
-            statement = con.createStatement();
+            Statement statement = con.createStatement();
+            String query = "insert into Login (username,pw) values ('" + username.toLowerCase() + "', '" + password.toLowerCase() + "')";
+            System.out.println("insertar: \n" + query);
+            statement.executeUpdate(query);
+            return true;
         } catch (SQLException ex) {
+            System.out.println("Exception in addUser: " + ex.toString());
             return false;
         }
-        
-        // TODO remove
-        return false;
     }
 }
