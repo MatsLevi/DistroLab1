@@ -4,7 +4,7 @@ create database if not exists store;
 use store;
 
 create table if not exists Login(
-username varchar(50) not null,
+username varchar(50) not null unique,
 pw varchar(50) not null,
 id int not null auto_increment primary key);
 

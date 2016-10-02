@@ -4,6 +4,9 @@ package dist1.db;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -51,7 +54,15 @@ public class DBMYSQLConnector implements DBConnector{
 
     @Override
     public boolean addUser(String username, String password) {
-        //TODO fix
+        Statement statement = null;
+        
+        try{
+            statement = con.createStatement();
+        } catch (SQLException ex) {
+            return false;
+        }
+        
+        // TODO remove
         return false;
     }
 }
