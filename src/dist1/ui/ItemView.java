@@ -20,6 +20,26 @@ public class ItemView {
         this.quantity = quantity;
         this.id = id;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public int getPrice() {
+        return price;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public int getId() {
+        return id;
+    }
     
     @Override
     public String toString() {
