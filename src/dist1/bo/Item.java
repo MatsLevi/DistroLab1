@@ -25,4 +25,11 @@ public class Item {
         this.price = 0;
         this.type = null;
     }
+    
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append(name).append(",").append(type).append(",").append(price).append(",").append(quantity).append(",").append(id);
+        return sb.toString();
+    }
 }
