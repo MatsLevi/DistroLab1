@@ -54,9 +54,10 @@
             out.write("<td>");out.write(items[i].getType());out.write("</td>");
             out.write("<td>");out.write(Integer.toString(items[i].getPrice()));out.write("</td>");
             out.write("<td>");out.write(Integer.toString(items[i].getQuantity()));out.write("</td>");
-            out.write("<td>");out.write("<input type=");out.write("checkbox");out.write(">");
-            out.write("</td>");
+            out.write("<td>");out.write("<input type= checkbox name=");out.write(items[i].getName());
+            out.write("value=");out.write(items[i].getName());out.write(">");out.write("</td>");
             out.write("</tr>");
+
         }
         %>
 
@@ -65,7 +66,7 @@
             <td>Mat</td>
             <td>25</td>
             <td>5</td>
-            <td><input type="checkbox" name="<%out.write(items[0].getName());%>" value="<%out.write(items[0].getName());%>"></td>
+            <td><input type="checkbox" name="Kyckling" value="<%out.write(items[0].getName());%>"></td>
         </tr>
         <tr>
             <td>Oliver</td>
