@@ -26,5 +26,6 @@ public class LoginServlet extends HttpServlet{
         SecureFacade.authorizeRequest(request.getParameter("username"), request.getParameter("password"));
 
         request.getRequestDispatcher("index.jsp").forward(request, response);
+
     }
 }
