@@ -32,25 +32,35 @@
 </head>
 <body>
 
+    <form method="post" action="${pageContext.request.contextPath}/itemservlet">
+
     <table>
         <tr>
             <th>Name</th>
             <th>Type</th>
             <th>Price</th>
             <th>quantity</th>
+            <th>Add to cart</th>
         </tr>
         <tr>
             <td>Kyckling</td>
             <td>Mat</td>
             <td>25</td>
             <td>5</td>
+            <td><input type="checkbox" name="Mat" value="Kyckling"></td>
         </tr>
         <tr>
             <td>Oliver</td>
             <td>Mat</td>
             <td>5555</td>
             <td>55</td>
+            <td><input type="checkbox" name="Mat" value="Oliver"></td>
         </tr>
     </table>
+
+        <input type="submit" name="button1" value="Add">
+
+    </form>
+
 </body>
 </html>
