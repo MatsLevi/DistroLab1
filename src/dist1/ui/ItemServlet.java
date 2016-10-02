@@ -1,6 +1,8 @@
 
 package dist1.ui;
 
+import dist1.bo.ItemFacade;
+
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,8 +17,14 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/itemservlet")
 public class ItemServlet extends HttpServlet{
 
-    protected void getItems(){
+    public static ItemView[] getItems(){
+        ItemView[] items = ItemFacade.getItemsRequest();
 
+        for(ItemView it: items){
+            System.out.println(it.toString());
+        }
+
+        return items;
     }
 
     @Override
@@ -24,7 +32,9 @@ public class ItemServlet extends HttpServlet{
         /*if(request.getParameter("username") == null || request.getParameter("password") == null)
             return;*/
 
-        System.out.println("In item:" + request.getParameter("Kyckling") + "\nSecond item:: " + request.getParameter("Oliver"));
+        System.out.println("In item:" + request.getParameter("Kyckling") + "\nSecond item: " + request.getParameter("Oliver"));
+
+        getItems();
 
         request.getRequestDispatcher("basket.jsp").forward(request, response);
 
