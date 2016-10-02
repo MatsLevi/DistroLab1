@@ -6,8 +6,8 @@ package dist1.bo;
 public class Item {
 
     private final String name;
-    private final float price;
     private final String type; //should prob be enum
+    private final float price;
     private int quantity;
     private int id;
 
