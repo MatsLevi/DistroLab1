@@ -47,14 +47,14 @@
             <td>Mat</td>
             <td>25</td>
             <td>5</td>
-            <td><input type="checkbox" name="Mat" value="Kyckling"></td>
+            <td><input type="checkbox" name="Kyckling" value="Kyckling"></td>
         </tr>
         <tr>
             <td>Oliver</td>
             <td>Mat</td>
             <td>5555</td>
             <td>55</td>
-            <td><input type="checkbox" name="Mat" value="Oliver"></td>
+            <td><input type="checkbox" name="Oliver" value="Oliver"></td>
         </tr>
     </table>
 
