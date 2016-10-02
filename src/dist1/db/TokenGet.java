@@ -23,7 +23,7 @@ public class TokenGet extends Token{
         
         try {
             db = new DBMYSQLConnector();
-            db.connect("store", "login", "123456");
+            db.connect("store", "login_user", "123456");
             
             id = db.getUser(username, pw);
             db.disconnect();

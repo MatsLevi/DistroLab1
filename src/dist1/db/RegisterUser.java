@@ -12,7 +12,7 @@ public class RegisterUser {
 
         try {
             db = new DBMYSQLConnector();
-            db.connect("store", "login", "123456");
+            db.connect("store", "login_user", "123456");
 
             addSuccess = db.addUser(username, pw);
             db.disconnect();
