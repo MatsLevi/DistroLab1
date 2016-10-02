@@ -9,7 +9,7 @@ pw varchar(50) not null,
 id int not null auto_increment primary key);
 
 create table if not exists Item(
-itemname varchar(50) not null,
+item_name varchar(50) not null unique,
 item_type varchar(50) not null,
 price int not null,
 quantity int not null,
