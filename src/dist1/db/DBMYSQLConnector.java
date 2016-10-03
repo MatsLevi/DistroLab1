@@ -196,8 +196,6 @@ public class DBMYSQLConnector implements DBConnector{
                 idConcats.append("id = " + Integer.toString(idValues[i]) + " ");
             } else if((idValues.length - 1) != i) {
                 idConcats.append("or id = " + Integer.toString(idValues[i]) + " ");
-            } else {
-                idConcats.append(Integer.toString(idValues[i]));
             }
         }
     }
