@@ -34,13 +34,15 @@ public class ItemServlet extends HttpServlet{
         /*if(request.getParameter("username") == null || request.getParameter("password") == null)
             return;*/
 
-        HttpSession session = request.getSession();
+        /*HttpSession session = request.getSession();
         int size = (int)session.getAttribute("arraySize");
 
         System.out.println("In itemServlet: ");
         for(int i = 0; i < size; i++){
             System.out.println("Item ID: " +request.getParameter(Integer.toString(i)));
-        }
+        }*/
+        
+        //TODO remove after basket servlet is done
 
         request.getRequestDispatcher("basket.jsp").forward(request, response);
 
