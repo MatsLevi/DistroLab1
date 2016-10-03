@@ -18,4 +18,6 @@ id int not null auto_increment primary key);
 create table if not exists Basket(
 user_id int not null,
 item_id int not null,
-primary key(user_id,item_id));
+primary key(user_id,item_id),
+foreign key (user_id) references Login(id) on delete cascade,
+foreign key (item_id) references Item(id) on delete cascade);

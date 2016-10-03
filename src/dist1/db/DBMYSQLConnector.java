@@ -258,6 +258,24 @@ public class DBMYSQLConnector implements DBConnector{
 
     @Override
     public void addToBasket(int userId, int[] itemIdValues) {
+        Statement statement = null;
+        String query;
         
+        for(int i = 0; i < itemIdValues.length; i++) {
+            try{
+                statement = con.createStatement();
+                query = "insert into Basket (user_id,item_id) values (" + userId + ", " + itemIdValues[i] + ")";
+                System.out.println("insertar: \n" + query);
+                statement.executeUpdate(query);
+            } catch (SQLException ex) {
+                System.out.println("Exception in addToBasket: " + ex.toString());
+            } finally {
+                if(statement != null) {
+                    try {
+                        statement.close();
+                    } catch (SQLException ex) {}
+                }
+            }
+        }
     }
 }
