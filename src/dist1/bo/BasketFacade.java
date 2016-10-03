@@ -10,7 +10,12 @@ import java.util.ArrayList;
  * @author Gunnlaugur, Mats
  */
 public class BasketFacade {
-    
+
+    /**
+     * takes an array of IDs and returns the actual items
+     * @param idValues int array containing item IDs
+     * @return array of itemviews
+     */
     public static ItemView[] getItemsRequest(int[] idValues) {
         BasketLogic bl = new BasketLogic();
         Item[] items = bl.getItems(idValues);
@@ -23,7 +28,12 @@ public class BasketFacade {
         
         return iv;
     }
-    
+
+    /**
+     * adds items to basket
+     * @param tv tokenview contining user information
+     * @param itemIdValues item ids
+     */
     public static void addItemsToBasketRequest(TokenView tv, ArrayList<Integer> itemIdValues) {
         BasketLogic bl = new BasketLogic();
         bl.addItemsToBasket(tv, itemIdValues);
