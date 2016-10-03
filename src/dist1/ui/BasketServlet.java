@@ -44,6 +44,7 @@ public class BasketServlet extends HttpServlet{
         TokenView tv = (TokenView)session.getAttribute("Token");
         
         BasketFacade.removeItemsFromBasketRequest(tv, itemValues);
+        
         request.getRequestDispatcher("basket.jsp").forward(request, response);
     }
     
