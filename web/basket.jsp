@@ -103,6 +103,10 @@
 
         Delete items:<br>
 
+        <%
+            session.setAttribute("basketArraySize", items.length);
+        %>
+
         <input type="submit" name="button" value="Delete">
 
     </form>

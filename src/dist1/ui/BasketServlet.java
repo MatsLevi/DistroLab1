@@ -48,8 +48,12 @@ public class BasketServlet extends HttpServlet{
     
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        if(request.getParameter("button2") != null){
+            request.getRequestDispatcher("availableItems.jsp").forward(request, response);
+        }
+
         removeItems(request);
-        
-        request.getRequestDispatcher("availableItems.jsp").forward(request, response);
+
     }
 }
