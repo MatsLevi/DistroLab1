@@ -44,7 +44,7 @@ public class BasketGet {
      * @param userId int containing user ID
      * @param itemIdValues int array containing ID of the items
      */
-    public static void addItem(int userId, int[] itemIdValues) {
+    public static void addItems(int userId, int[] itemIdValues) {
         DBConnector db = null;
         
         try{
