@@ -13,6 +13,31 @@
 </head>
 <body>
 
+    <%
+        int calk = 0;
+        int size = (int)session.getAttribute("arraySize");
+        System.out.println("array length in basket: " +size);
+
+        for(int i = 0; i < size; i++){
+            System.out.println("Item ID: " +request.getParameter(Integer.toString(i)));
+            if(request.getParameter(Integer.toString(i)) != null){
+                calk++;
+            }
+        }
+
+        int [] getItems = new int[calk];
+        int check = 0;
+
+        for(int i = 0; i < size; i++){
+            System.out.println("Item ID: " +request.getParameter(Integer.toString(i)));
+            if(request.getParameter(Integer.toString(i)) != null){
+                getItems[check] = Integer.parseInt(request.getParameter(Integer.toString(i)));
+            }
+        }
+
+
+    %>
+
 <table>
 
 
