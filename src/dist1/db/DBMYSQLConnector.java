@@ -288,4 +288,27 @@ public class DBMYSQLConnector implements DBConnector{
             }
         }
     }
+
+    @Override
+    public void removeFromBasket(int userId, int[] itemIdValues) {
+        Statement statement = null;
+        String query;
+        
+        for(int i = 0; i < itemIdValues.length; i++) {
+            try{
+                statement = con.createStatement();
+                query = "delete from Basket where item_id = " + itemIdValues[i];
+                System.out.println("deletar: \n" + query);
+                statement.executeUpdate(query);
+            } catch (SQLException ex) {
+                System.out.println("Exception in addToBasket: " + ex.toString());
+            } finally {
+                if(statement != null) {
+                    try {
+                        statement.close();
+                    } catch (SQLException ex) {}
+                }
+            }
+        }
+    }
 }

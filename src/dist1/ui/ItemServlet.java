@@ -43,7 +43,7 @@ public class ItemServlet extends HttpServlet{
         System.out.println("In itemServlet: ");
         for(int i = 0; i < size; i++){
             try{ 
-             itemValues.add(Integer.parseInt(request.getParameter(Integer.toString(i))));
+                itemValues.add(Integer.parseInt(request.getParameter(Integer.toString(i))));
             } catch(NumberFormatException e) {}
         }
         
