@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -32,7 +33,14 @@ public class ItemServlet extends HttpServlet{
         /*if(request.getParameter("username") == null || request.getParameter("password") == null)
             return;*/
 
-        System.out.println("In item:" + request.getParameter("milk") + "\nSecond item: " + request.getParameter("hammer"));
+        HttpSession session = request.getSession();
+        int size = (int)session.getAttribute("arraySize");
+
+        System.out.println("In servlet basket printout:");
+        for(int i = 0; i < size; i++){
+            System.out.println("Item ID: " +request.getParameter(Integer.toString(i)));
+        }
+
 
         request.getRequestDispatcher("basket.jsp").forward(request, response);
 

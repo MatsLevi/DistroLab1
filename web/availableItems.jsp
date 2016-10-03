@@ -54,29 +54,17 @@
             out.write("<td>");out.write(items[i].getType());out.write("</td>");
             out.write("<td>");out.write(Integer.toString(items[i].getPrice()));out.write("</td>");
             out.write("<td>");out.write(Integer.toString(items[i].getQuantity()));out.write("</td>");
-            out.write("<td>");out.write("<input type= checkbox name=");out.write(items[i].getName());
-            out.write("value=");out.write(items[i].getName());out.write(">");out.write("</td>");
+            out.write("<td>");out.write("<input type= checkbox name= \"");out.write(Integer.toString(i));
+            out.write("\" value= ");out.write(Integer.toString(items[i].getId()));out.write(">");out.write("</td>");
             out.write("</tr>");
 
         }
         %>
-
-        <tr>
-            <td>Kyckling</td>
-            <td>Mat</td>
-            <td>25</td>
-            <td>5</td>
-            <td><input type="checkbox" name="Kyckling" value="<%out.write(items[0].getName());%>"></td>
-        </tr>
-        <tr>
-            <td>Oliver</td>
-            <td>Mat</td>
-            <td>5555</td>
-            <td>55</td>
-            <td><input type="checkbox" name="Oliver" value="Oliver"></td>
-        </tr>
     </table>
 
+        <%
+        session.setAttribute("arraySize", items.length);
+         %>
         <input type="submit" name="button1" value="Add">
 
     </form>
