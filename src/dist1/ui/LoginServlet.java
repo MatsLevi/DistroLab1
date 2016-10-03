@@ -16,7 +16,14 @@ import javax.servlet.http.HttpSession;
  */
 @WebServlet("/loginservlet")
 public class LoginServlet extends HttpServlet{
-    
+
+    /**
+     * Recievecs data from jsp and redirects it
+     * @param request HttpServletRequest contains data from jsp
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         if(request.getParameter("username") == null || request.getParameter("password") == null || 

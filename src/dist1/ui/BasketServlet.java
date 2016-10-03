@@ -56,7 +56,7 @@ public class BasketServlet extends HttpServlet{
     }
 
     /**
-     *
+     *Recievecs data from jsp
      * @param request HttpServletRequest containing information from a jsp
      * @param response HttpServletResponse an argument of the doPost method
      * @throws ServletException
