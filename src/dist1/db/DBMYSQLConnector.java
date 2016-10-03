@@ -103,14 +103,21 @@ public class DBMYSQLConnector implements DBConnector{
     @Override
     public ArrayList<ItemGet> getItems(int userId) {
         ArrayList<ItemGet> items = new ArrayList<>();
+        StringBuilder removeConcats = new StringBuilder();
         Statement statement = null;
         ResultSet result = null;
         String name, type;
         int price, quantity, id;
         
+        System.out.println("getItems userId: " + userId);
+        
         try{
             statement = con.createStatement();
+            
             String query = "select * from Item";
+            removeConcats(removeConcats,userId);
+            query = query + removeConcats;
+            
             System.out.println("selectar: \n" + query);
             result = statement.executeQuery(query);
 
@@ -191,12 +198,16 @@ public class DBMYSQLConnector implements DBConnector{
         return items;
     }
     
+    private void removeConcats(StringBuilder idConcats, int userId) {
+        
+    }
+    
     private void addConcats(StringBuilder idConcats, int[] idValues) {
         for(int i = 0; i < idValues.length; i++) {
             if(i == 0) {
-                idConcats.append("id = " + Integer.toString(idValues[i]) + " ");
+                idConcats.append("id = ").append(Integer.toString(idValues[i])).append(" ");
             } else {
-                idConcats.append("or id = " + Integer.toString(idValues[i]) + " ");
+                idConcats.append("or id = ").append(Integer.toString(idValues[i])).append(" ");
             }
         }
     }
