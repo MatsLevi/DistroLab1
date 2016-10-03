@@ -26,9 +26,7 @@
         Password:<br>
 
         <input type="password" name="password"><br>
-        <%
-        session.setAttribute("Token", tv);
-        %>
+
         <input type="submit" name="button1" value="Login">
 
     </form>

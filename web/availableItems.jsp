@@ -1,5 +1,6 @@
 <%@ page import="dist1.ui.ItemServlet" %>
-<%@ page import="dist1.ui.ItemView" %><%--
+<%@ page import="dist1.ui.ItemView" %>
+<%@ page import="dist1.ui.TokenView" %><%--
   User: mats, gunnlaugur
   Date: 10/2/16
   Time: 1:29 PM
@@ -7,8 +8,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-
-    <%! ItemView[] items = ItemServlet.getItems();%>
+    <%TokenView tok = (TokenView) session.getAttribute("Token");%>
+    <%System.out.println("Token check: " +tok.getId());%>
+    <% ItemView[] items = ItemServlet.getItems(tok);%>
     <%System.out.println("Item 1: " +items[0] +" Item 3: " +items[3]);%>
 
     <title>List of items</title>
