@@ -11,7 +11,6 @@
     <%TokenView tok = (TokenView) session.getAttribute("Token");%>
     <%System.out.println("Token check: " +tok.getId());%>
     <% ItemView[] items = ItemServlet.getItems(tok);%>
-    <%System.out.println("Item 1: " +items[0] +" Item 3: " +items[3]);%>
 
     <title>List of items</title>
 

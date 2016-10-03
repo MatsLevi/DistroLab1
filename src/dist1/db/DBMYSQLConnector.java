@@ -205,7 +205,7 @@ public class DBMYSQLConnector implements DBConnector{
             if(i == 0) {
                 removeConcats.append("id != ").append(Integer.toString(itemIdValues.get(i))).append(" ");
             } else {
-                removeConcats.append("or id != ").append(Integer.toString(itemIdValues.get(i))).append(" ");
+                removeConcats.append("and id != ").append(Integer.toString(itemIdValues.get(i))).append(" ");
             }
         }
     }
