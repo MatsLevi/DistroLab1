@@ -28,6 +28,7 @@ public class ItemServlet extends HttpServlet{
         return items;
     }
 
+
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         /*if(request.getParameter("username") == null || request.getParameter("password") == null)
