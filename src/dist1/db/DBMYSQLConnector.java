@@ -101,7 +101,7 @@ public class DBMYSQLConnector implements DBConnector{
     }
 
     @Override
-    public ArrayList<ItemGet> getItems() {
+    public ArrayList<ItemGet> getItems(int userId) {
         ArrayList<ItemGet> items = new ArrayList<>();
         Statement statement = null;
         ResultSet result = null;

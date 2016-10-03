@@ -18,8 +18,8 @@ import javax.servlet.http.HttpSession;
 @WebServlet("/itemservlet")
 public class ItemServlet extends HttpServlet{
 
-    public static ItemView[] getItems(){
-        ItemView[] items = ItemFacade.getItemsRequest();
+    public static ItemView[] getItems(TokenView tv){
+        ItemView[] items = ItemFacade.getItemsRequest(tv);
 
         for(ItemView it: items){
             System.out.println(it.toString());
