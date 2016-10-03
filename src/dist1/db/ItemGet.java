@@ -17,14 +17,14 @@ public class ItemGet extends Item {
         super();
     }
 
-    public static ItemGet[] getItem() {
+    public static ItemGet[] getItem(int userId) {
         DBConnector db = null;
         
         try{
             db = new DBMYSQLConnector();
             db.connect("store", "item_user", "123");
             
-            ArrayList<ItemGet> items = db.getItems();
+            ArrayList<ItemGet> items = db.getItems(userId);
             db.disconnect();
             
             ItemGet[] ig = new ItemGet[items.size()];

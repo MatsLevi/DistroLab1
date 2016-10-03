@@ -2,6 +2,7 @@
 package dist1.bo;
 
 import dist1.ui.ItemView;
+import dist1.ui.TokenView;
 
 /**
  *
@@ -9,9 +10,9 @@ import dist1.ui.ItemView;
  */
 public class ItemFacade {
     
-    public static ItemView[] getItemsRequest() {
+    public static ItemView[] getItemsRequest(TokenView tv) {
         ItemLogic il = new ItemLogic();
-        Item[] items = il.getItems();
+        Item[] items = il.getItems(tv);
         
         //TODO check what happens if items is empty
         ItemView[] iv = new ItemView[items.length];
