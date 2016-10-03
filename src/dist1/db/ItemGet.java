@@ -9,6 +9,14 @@ import java.util.ArrayList;
  */
 public class ItemGet extends Item {
 
+    /**
+     * Constructor containing multiple variables
+     * @param name String containing name of the item
+     * @param type String containing item type
+     * @param price int containing item price
+     * @param quantity int containing quantity of intems in db
+     * @param id int containing uniqe id of item
+     */
     protected ItemGet(String name, String type, int price, int quantity, int id) {
         super(name, type, price, quantity, id);
     }
@@ -17,6 +25,11 @@ public class ItemGet extends Item {
         super();
     }
 
+    /**
+     * Tries to connect to db and get items
+     * @param userId int containing uniqe ID of user
+     * @return returns ItemGet array containing items
+     */
     public static ItemGet[] getItem(int userId) {
         DBConnector db = null;
         
