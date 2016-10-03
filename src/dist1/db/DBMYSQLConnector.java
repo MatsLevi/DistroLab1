@@ -7,6 +7,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -136,5 +138,67 @@ public class DBMYSQLConnector implements DBConnector{
         }
         
         return items;
+    }
+
+    @Override
+    public ArrayList<ItemGet> getItems(int[] idValues) {
+        ArrayList<ItemGet> items = new ArrayList<>();
+        StringBuilder idConcats = new StringBuilder();
+        Statement statement = null;
+        ResultSet result = null;
+        String name, type;
+        int price, quantity, id;
+        
+        try{
+            if(idValues.length == 0) throw new Exception("idValues empty");
+            
+            statement = con.createStatement();
+            
+            String query = "select * from Item where ";
+            addConcats(idConcats, idValues);
+            query = query + idConcats.toString();
+            
+            System.out.println("selectar: \n" + query);
+            result = statement.executeQuery(query);
+            
+            while(result.next()) {
+                name = result.getObject(1).toString();
+                type = result.getObject(2).toString();
+                price = Integer.parseInt(result.getObject(3).toString());
+                quantity = Integer.parseInt(result.getObject(4).toString());
+                id = Integer.parseInt(result.getObject(5).toString());
+                
+                items.add(new ItemGet(name,type,price,quantity,id));
+            }
+        } catch(SQLException | NumberFormatException ex) {
+            System.out.println("Exception in getItems2: " + ex.toString());
+        } catch (Exception ex) {
+            System.out.println("Exception in getItems2: " + ex.toString());
+        } finally {
+            if(statement != null) {
+                try {
+                    statement.close();
+                } catch (SQLException ex) {}
+            }
+            if(result != null) {
+                try {
+                    result.close();
+                } catch (SQLException ex) {}
+            }
+        }
+        
+        return items;
+    }
+    
+    private void addConcats(StringBuilder idConcats, int[] idValues) {
+        for(int i = 0; i < idValues.length; i++) {
+            if(i == 0) {
+                idConcats.append("id = " + Integer.toString(idValues[i]) + " ");
+            } else if((idValues.length - 1) != i) {
+                idConcats.append("or id = " + Integer.toString(idValues[i]) + " ");
+            } else {
+                idConcats.append(Integer.toString(idValues[i]));
+            }
+        }
     }
 }
