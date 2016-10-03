@@ -1,5 +1,6 @@
 <%@ page import="dist1.ui.BasketServlet" %>
-<%@ page import="dist1.ui.ItemView" %><%--
+<%@ page import="dist1.ui.ItemView" %>
+<%@ page import="dist1.ui.TokenView" %><%--
   User: mats, gunnlaugur
   Date: 10/2/16
   Time: 3:17 PM
@@ -33,7 +34,7 @@
 <body>
 
     <%
-        int calk = 0;
+       /* int calk = 0;
         int size = (int)session.getAttribute("arraySize");
         System.out.println("array length in basket: " +size);
 
@@ -59,8 +60,13 @@
 
         for(int i = 0; i < calk; i++){System.out.println("intem check in basket:" +getItems[i]);}
 
-        ItemView[] items = BasketServlet.getItems(getItems);
+        ItemView[] items = BasketServlet.getItems(getItems);*/
+
     %>
+
+    <%TokenView tok = (TokenView) session.getAttribute("Token");%>
+    <%System.out.println("Token check: " +tok.getId());%>
+    <% ItemView[] items = BasketServlet.getItems(tok);%>
 
 <table>
 
