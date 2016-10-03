@@ -26,7 +26,9 @@
             }
         }
 
-        int [] getItems = new int[calk-1];
+        System.out.println("calk check: " +calk);
+
+        int [] getItems = new int[calk];
         int check = 0;
 
         for(int i = 0; i < size; i++){
