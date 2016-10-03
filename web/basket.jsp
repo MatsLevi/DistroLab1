@@ -82,5 +82,13 @@
 
 </table>
 
+    <form method="post" action="${pageContext.request.contextPath}/basketservlet">
+
+        Return to store:<br>
+
+        <input type="submit" name="button2" value="Return">
+
+    </form>
+
 </body>
 </html>
