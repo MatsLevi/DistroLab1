@@ -12,13 +12,11 @@
 
     <h1>Header 1</h1>
 
-    <h2>I like it</h2>
+    <h2>Press login to login</h2>
 
-     <p>Lite vanlig text v23 omg testing</p>
+     <p>Lite vanlig text</p>
 
-    <a href="http://mobileimages.lowes.com/product/converted/891347/891347002501.jpg">Link to a sink</a>
-
-    <a herf="login.jsp">Login</a>
+    <a href="login.jsp">Login</a>
 
     <br><br>
     The time on the server is <%= new java.util.Date() %>

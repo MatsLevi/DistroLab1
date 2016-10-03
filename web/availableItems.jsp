@@ -8,9 +8,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <%TokenView tok = (TokenView) session.getAttribute("Token");%>
-    <%System.out.println("Token check: " +tok.getId());%>
-    <% ItemView[] items = ItemServlet.getItems(tok);%>
+    <%
+        TokenView tok = (TokenView) session.getAttribute("Token");
+    %>
+    <% 
+        ItemView[] items = ItemServlet.getItems(tok);
+    %>
 
     <title>List of items</title>
 
@@ -40,35 +43,33 @@
 
     <form method="post" action="${pageContext.request.contextPath}/itemservlet">
 
-    <table>
-        <tr>
-            <th>Name</th>
-            <th>Type</th>
-            <th>Price</th>
-            <th>quantity</th>
-            <th>Add to cart</th>
-        </tr>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Price</th>
+                <th>quantity</th>
+                <th>Add to cart</th>
+            </tr>
 
-        <%for(int i = 0; i < items.length;i++){
-            out.write("<tr>");
-            out.write("<td>");out.write(items[i].getName());out.write("</td>");
-            out.write("<td>");out.write(items[i].getType());out.write("</td>");
-            out.write("<td>");out.write(Integer.toString(items[i].getPrice()));out.write("</td>");
-            out.write("<td>");out.write(Integer.toString(items[i].getQuantity()));out.write("</td>");
-            out.write("<td>");out.write("<input type= checkbox name= \"");out.write(Integer.toString(i));
-            out.write("\" value= ");out.write(Integer.toString(items[i].getId()));out.write(">");out.write("</td>");
-            out.write("</tr>");
-
-        }
-        %>
-    </table>
+            <%
+                for(int i = 0; i < items.length;i++){
+                    out.write("<tr>");
+                    out.write("<td>");out.write(items[i].getName());out.write("</td>");
+                    out.write("<td>");out.write(items[i].getType());out.write("</td>");
+                    out.write("<td>");out.write(Integer.toString(items[i].getPrice()));out.write("</td>");
+                    out.write("<td>");out.write(Integer.toString(items[i].getQuantity()));out.write("</td>");
+                    out.write("<td>");out.write("<input type= checkbox name= \"");out.write(Integer.toString(i));
+                    out.write("\" value= ");out.write(Integer.toString(items[i].getId()));out.write(">");out.write("</td>");
+                    out.write("</tr>");
+                }
+            %>
+        </table>
 
         <%
-        session.setAttribute("arraySize", items.length);
-         %>
+            session.setAttribute("arraySize", items.length);
+        %>
         <input type="submit" name="button1" value="Add">
-
     </form>
-
 </body>
 </html>
