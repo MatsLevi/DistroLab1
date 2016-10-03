@@ -11,9 +11,11 @@ import dist1.ui.TokenView;
 public class ItemLogic {
 
     /**
-     * gets items from the database
-     * @param tv token containing user info
-     * @return desiered item or items
+     * Returns an array of all items in the database, excluding those 
+     * within the users basket.
+     * 
+     * @param tv the users TokenView.
+     * @return the items represented as <code>Item</code> array.
      */
     public Item[] getItems(TokenView tv) {
         Token t = convertTokenView(tv);

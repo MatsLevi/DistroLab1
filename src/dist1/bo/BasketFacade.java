@@ -6,11 +6,20 @@ import dist1.ui.TokenView;
 import java.util.ArrayList;
 
 /**
- *
+ * The <code>BasketFacade</code> acts as a facade for the 
+ * <code>BasketServlet</code>.
+ * 
  * @author Gunnlaugur, Mats
+ * @see dist1.ui.BasketServlet
  */
 public class BasketFacade {
 
+    /**
+     * Returns the users basket items.
+     * 
+     * @param tv the users TokenView.
+     * @return the items represented as ItemViews.
+     */
     public static ItemView[] getItemsRequest(TokenView tv) {
         BasketLogic bl = new BasketLogic();
         Item[] items = bl.getItems(tv);
@@ -25,15 +34,22 @@ public class BasketFacade {
     }
 
     /**
-     * adds items to basket
-     * @param tv tokenview contining user information
-     * @param itemIdValues item ids
+     * Adds items to basket.
+     * 
+     * @param tv TokenView containing user information.
+     * @param itemIdValues the items id values to be added.
      */
     public static void addItemsToBasketRequest(TokenView tv, ArrayList<Integer> itemIdValues) {
         BasketLogic bl = new BasketLogic();
         bl.addItemsToBasket(tv, itemIdValues);
     }
 
+    /**
+     * Removes items from basket.
+     * 
+     * @param tv TokenView containing user information.
+     * @param itemIdValues the items id values to be removed.
+     */
     public static void removeItemsFromBasketRequest(TokenView tv, ArrayList<Integer> itemIdValues) {
         BasketLogic bl = new BasketLogic();
         bl.removeItemsFromBasket(tv, itemIdValues);
