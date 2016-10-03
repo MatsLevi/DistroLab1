@@ -20,7 +20,7 @@ public class ItemServlet extends HttpServlet{
 
     public static ItemView[] getItems(TokenView tv){
         ItemView[] items = ItemFacade.getItemsRequest(tv);
-
+        
         for(ItemView it: items){
             System.out.println(it.toString());
         }

@@ -5,3 +5,4 @@ grant select, insert, update, delete on store.Login to 'login_user'@'localhost';
 
 create user 'item_user'@'localhost' identified by '123';
 grant select, insert, update, delete on store.Item to 'item_user'@'localhost';
+grant select, insert, update, delete on store.Basket to 'item_user'@'localhost';
