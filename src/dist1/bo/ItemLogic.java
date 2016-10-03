@@ -5,7 +5,9 @@ import dist1.db.ItemGet;
 import dist1.ui.TokenView;
 
 /**
- *
+ * The <code>ItemLogic</code> contains logical methods to be performed on 
+ * items.
+ * 
  * @author Gunnlaugur, Mats
  */
 public class ItemLogic {
@@ -24,9 +26,10 @@ public class ItemLogic {
     }
 
     /**
-     * converts tokenview to token
-     * @param tv a tokenview
-     * @return token
+     * Converts <code>TokenView</code> to token.
+     * 
+     * @param tv a <code>TokenView</code>.
+     * @return converted <code>Token</code>.
      */
     private Token convertTokenView(TokenView tv) {
         return new Token(tv.getId(),tv.getTimeStamp());

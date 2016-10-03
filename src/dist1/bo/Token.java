@@ -2,7 +2,9 @@
 package dist1.bo;
 
 /**
- *
+ * The <code>Token</code> <code>class</code> consists of data concerning the 
+ * <code>Token</code>.
+ * 
  * @author Gunnlaugur, Mats
  */
 public class Token {
@@ -12,9 +14,10 @@ public class Token {
     private final boolean authorized;
 
     /**
-     * token constructor used as an identifier in the system
-     * @param id token id in a int
-     * @param timeStamp timestams to know when token was issued
+     * Constructs a <code>Token</code> to be used as an identifier in the system.
+     * 
+     * @param id <code>Token</code> id in a <code>int</code>.
+     * @param timeStamp timestamps to know when token was issued.
      */
     protected Token(int id, long timeStamp) {
         this.id = id; this.timeStamp = timeStamp;
@@ -22,7 +25,7 @@ public class Token {
     }
 
     /**
-     * construktor to create fail token
+     * Constructs a fail token.
      */
     protected Token() {
         id = -1;
@@ -31,24 +34,27 @@ public class Token {
     }
 
     /**
-     * getter for token ID
-     * @return int containing ID
+     * Gets <code>Token</code> id.
+     * 
+     * @return <code>int</code> containing ID.
      */
     protected int getId() {
         return id;
     }
 
     /**
-     * getter for timestamp
-     * @return long conatining timestamp
+     * Gets <code>Token</code> timestamp.
+     * 
+     * @return <code>long</code> containing timestamp.
      */
     protected long getTimeStamp() {
         return timeStamp;
     }
 
     /**
-     * getts authorized succes or not
-     * @return boolean
+     * Gets <code>Token</code> authorization.
+     * 
+     * @return <code>boolean</code>, <code>true</code> if the user was authorized.
      */
     protected boolean getAuthorized() {
         return authorized;

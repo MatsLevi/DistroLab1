@@ -5,8 +5,11 @@ import dist1.ui.ItemView;
 import dist1.ui.TokenView;
 
 /**
- *
+ * The <code>ItemFacade</code> acts as a facade for the 
+ * <code>ItemServlet</code>.
+ * 
  * @author Gunnlaugur, Mats
+ * @see dist1.ui.ItemServlet
  */
 public class ItemFacade {
     
@@ -21,7 +24,6 @@ public class ItemFacade {
         ItemLogic il = new ItemLogic();
         Item[] items = il.getItems(tv);
         
-        //TODO check what happens if items is empty
         ItemView[] iv = new ItemView[items.length];
         for(int i = 0; i < items.length; i++) {
             iv[i] = new ItemView(items[i].getName(),items[i].getType(),items[i].getPrice(),items[i].getQuantity(),items[i].getId());

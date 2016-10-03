@@ -1,7 +1,9 @@
+
 package dist1.bo;
 
 /**
- *
+ * The <code>Item</code> <code>class</code> consists of data concerning the item.
+ * 
  * @author Mats, Gunnlaugur
  */
 public class Item {
@@ -13,12 +15,13 @@ public class Item {
     private int id;
 
     /**
-     * Constructor containing multiple variables
-     * @param name String containing name of the item
-     * @param type String containing item type
-     * @param price int containing item price
-     * @param quantity int containing quantity of intems in db
-     * @param id int containing uniqe id of item
+     * Constructs an Item based on given parameters.
+     * 
+     * @param name <code>String</code> containing name of the item.
+     * @param type <code>String</code> containing item type.
+     * @param price <code>int</code> containing item price.
+     * @param quantity <code>int</code> containing quantity of items in db.
+     * @param id <code>int</code> containing a unique id of the item.
      */
     protected Item(String name, String type, int price, int quantity, int id){
         this.name = name;
@@ -29,7 +32,7 @@ public class Item {
     }
 
     /**
-     * constructor
+     * Constructs an empty Item.
      */
     protected Item(){
         this.name = null;
@@ -38,45 +41,55 @@ public class Item {
     }
 
     /**
-     * getter for item name
-     * @return String containing name
+     * Gets item name.
+     * 
+     * @return <code>String</code> containing name.
      */
     public String getName() {
         return name;
     }
 
     /**
-     * getter for item type
-     * @return String containing type
+     * Gets item type.
+     * 
+     * @return <code>String</code> containing type.
      */
     public String getType() {
         return type;
     }
 
     /**
-     * getter for price
-     * @return int containing price
+     * Gets item price.
+     * 
+     * @return <code>int</code> containing the item price.
      */
     public int getPrice() {
         return price;
     }
 
     /**
-     * getter for quantity
-     * @return int containing quantity of an item
+     * Gets item quantity.
+     * 
+     * @return <code>int</code> containing the quantity of the item.
      */
     public int getQuantity() {
         return quantity;
     }
 
     /**
-     * getter for id
-     * @return int containing item id
+     * Gets item id.
+     * 
+     * @return <code>int</code> containing item id.
      */
     public int getId() {
         return id;
     }
     
+    /**
+     * Returns a string containing the item information.
+     * 
+     * @return the item information.
+     */
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
