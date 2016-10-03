@@ -33,4 +33,9 @@ public class BasketFacade {
         BasketLogic bl = new BasketLogic();
         bl.addItemsToBasket(tv, itemIdValues);
     }
+
+    public static void removeItemsFromBasketRequest(TokenView tv, ArrayList<Integer> itemIdValues) {
+        BasketLogic bl = new BasketLogic();
+        bl.removeItemsFromBasket(tv, itemIdValues);
+    }
 }

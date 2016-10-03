@@ -16,4 +16,5 @@ public interface DBConnector {
     public ArrayList<ItemGet> getItems(int userId);
     public ArrayList<ItemGet> getBasketItems(int userId);
     public void addToBasket(int userId, int[] itemIdValues);
+    public void removeFromBasket(int userId, int[] itemIdValues);
 }

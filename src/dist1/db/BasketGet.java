@@ -34,7 +34,7 @@ public class BasketGet {
         }
     }
     
-    public static void addItem(int userId, int[] itemIdValues) {
+    public static void addItems(int userId, int[] itemIdValues) {
         DBConnector db = null;
         
         try{
@@ -45,6 +45,22 @@ public class BasketGet {
             db.disconnect();
         } catch(Exception ex) {
             System.out.println("addItem5: " + ex.toString());
+            if(db != null) 
+                db.disconnect();
+        }
+    }
+
+    public static void removeItems(int userId, int[] itemIdValues) {
+        DBConnector db = null;
+        
+        try{
+            db = new DBMYSQLConnector();
+            db.connect("store", "item_user", "123");
+            
+            db.removeFromBasket(userId, itemIdValues);
+            db.disconnect();
+        } catch(Exception ex) {
+            System.out.println("removeItems: " + ex.toString());
             if(db != null) 
                 db.disconnect();
         }

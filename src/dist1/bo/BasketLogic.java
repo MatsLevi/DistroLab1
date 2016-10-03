@@ -21,7 +21,11 @@ public class BasketLogic {
      * @param itemIdValues items IDs
      */
     public void addItemsToBasket(TokenView tv, ArrayList<Integer> itemIdValues) {
-        BasketGet.addItem(tv.getId(), IntegerArrayListToIntArray(itemIdValues));
+        BasketGet.addItems(tv.getId(), IntegerArrayListToIntArray(itemIdValues));
+    }
+    
+    public void removeItemsFromBasket(TokenView tv, ArrayList<Integer> itemIdValues) {
+        BasketGet.removeItems(tv.getId(), IntegerArrayListToIntArray(itemIdValues));
     }
     
     private int[] IntegerArrayListToIntArray(ArrayList<Integer> integers) {
