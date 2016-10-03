@@ -68,38 +68,29 @@
     <%System.out.println("Token check: " +tok.getId());%>
     <% ItemView[] items = BasketServlet.getItems(tok);%>
 
-<table>
-
-    <tr>
-        <th>Name</th>
-        <th>Type</th>
-        <th>Price</th>
-        <th>Delete Box</th>
-    </tr>
-
-    <%for(int i = 0; i < items.length;i++){
-        out.write("<tr>");
-        out.write("<td>");out.write(items[i].getName());out.write("</td>");
-        out.write("<td>");out.write(items[i].getType());out.write("</td>");
-        out.write("<td>");out.write(Integer.toString(items[i].getPrice()));out.write("</td>");
-        out.write("<td>");out.write("<input type= checkbox name= \"");out.write(Integer.toString(i));
-        out.write("\" value= ");out.write(Integer.toString(items[i].getId()));out.write(">");out.write("</td>");
-        out.write("</tr>");
-
-    }
-    %>
-
-</table>
-
     <form method="post" action="${pageContext.request.contextPath}/basketservlet">
 
-        Return to store:<br>
+        <table>
 
-        <input type="submit" name="button2" value="Return">
+        <tr>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Price</th>
+            <th>Delete Box</th>
+        </tr>
 
-    </form>
+        <%for(int i = 0; i < items.length;i++){
+            out.write("<tr>");
+            out.write("<td>");out.write(items[i].getName());out.write("</td>");
+            out.write("<td>");out.write(items[i].getType());out.write("</td>");
+            out.write("<td>");out.write(Integer.toString(items[i].getPrice()));out.write("</td>");
+            out.write("<td>");out.write("<input type= checkbox name= \"");out.write(Integer.toString(i));
+            out.write("\" value= ");out.write(Integer.toString(items[i].getId()));out.write(">");out.write("</td>");
+            out.write("</tr>");
 
-    <form method="post" action="${pageContext.request.contextPath}/basketservlet">
+        }
+        %>
+        </table>
 
         Delete items:<br>
 
@@ -108,6 +99,14 @@
         %>
 
         <input type="submit" name="button" value="Delete">
+
+    </form>
+
+    <form method="post" action="${pageContext.request.contextPath}/basketservlet">
+
+        Return to store:<br>
+
+        <input type="submit" name="button2" value="Return">
 
     </form>
 
