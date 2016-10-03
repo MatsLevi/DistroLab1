@@ -20,17 +20,23 @@ import javax.servlet.http.HttpSession;
 @WebServlet("/itemservlet")
 public class ItemServlet extends HttpServlet{
 
+    /**
+     * Gets items from the db
+     * @param tv TokenView user information
+     * @return ItemView containing item data
+     */
     public static ItemView[] getItems(TokenView tv){
         ItemView[] items = ItemFacade.getItemsRequest(tv);
-        
-        for(ItemView it: items){
-            System.out.println(it.toString());
-        }
-
         return items;
     }
 
-
+    /**
+     * Able to recieve information from a jsp and redirect it.
+     * @param request HttpServletRequest contains data from jsp
+     * @param response
+     * @throws ServletException
+     * @throws IOException
+     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         /*if(request.getParameter("username") == null || request.getParameter("password") == null)
