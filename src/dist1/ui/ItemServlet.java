@@ -4,6 +4,7 @@ package dist1.ui;
 import dist1.bo.ItemFacade;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -34,15 +35,16 @@ public class ItemServlet extends HttpServlet{
         /*if(request.getParameter("username") == null || request.getParameter("password") == null)
             return;*/
 
-        /*HttpSession session = request.getSession();
+        HttpSession session = request.getSession();
         int size = (int)session.getAttribute("arraySize");
+        ArrayList<Integer> itemValues = new ArrayList<>();
 
         System.out.println("In itemServlet: ");
         for(int i = 0; i < size; i++){
-            System.out.println("Item ID: " +request.getParameter(Integer.toString(i)));
-        }*/
-        
-        //TODO remove after basket servlet is done
+            try{ 
+             itemValues.add(Integer.parseInt(request.getParameter(Integer.toString(i))));
+            } catch(NumberFormatException e) {}
+        }
 
         request.getRequestDispatcher("basket.jsp").forward(request, response);
 
