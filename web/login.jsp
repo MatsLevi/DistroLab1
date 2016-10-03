@@ -43,6 +43,5 @@
         <input type="submit" name="button2" value="Register">
 
     </form>
-
 </body>
 </html>
