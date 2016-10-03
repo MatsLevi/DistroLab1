@@ -74,6 +74,7 @@
         <th>Name</th>
         <th>Type</th>
         <th>Price</th>
+        <th>Delete Box</th>
     </tr>
 
     <%for(int i = 0; i < items.length;i++){
@@ -81,6 +82,8 @@
         out.write("<td>");out.write(items[i].getName());out.write("</td>");
         out.write("<td>");out.write(items[i].getType());out.write("</td>");
         out.write("<td>");out.write(Integer.toString(items[i].getPrice()));out.write("</td>");
+        out.write("<td>");out.write("<input type= checkbox name= \"");out.write(Integer.toString(i));
+        out.write("\" value= ");out.write(Integer.toString(items[i].getId()));out.write(">");out.write("</td>");
         out.write("</tr>");
 
     }
@@ -95,6 +98,15 @@
         <input type="submit" name="button2" value="Return">
 
     </form>
+
+    <form method="post" action="${pageContext.request.contextPath}/basketservlet">
+
+        Delete items:<br>
+
+        <input type="submit" name="button" value="Delete">
+
+    </form>
+
 
 </body>
 </html>
