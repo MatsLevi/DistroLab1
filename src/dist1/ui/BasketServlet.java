@@ -16,8 +16,8 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/basketservlet")
 public class BasketServlet extends HttpServlet{
     
-    public static ItemView[] getItems(){
-        ItemView[] items = BasketFacade.getItemsRequest();
+    public static ItemView[] getItems(int[] idValues){
+        ItemView[] items = BasketFacade.getItemsRequest(idValues);
         
         System.out.println("\nBasket items: ");
         for(ItemView it: items){
