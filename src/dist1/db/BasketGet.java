@@ -60,6 +60,11 @@ public class BasketGet {
         }
     }
 
+    /**
+     * Connects to the database and removes one or more items from a users basket
+     * @param userId int identifier for the user
+     * @param itemIdValues int array containing item identifiers
+     */
     public static void removeItems(int userId, int[] itemIdValues) {
         DBConnector db = null;
         
