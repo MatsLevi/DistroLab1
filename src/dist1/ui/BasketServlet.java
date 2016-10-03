@@ -19,21 +19,23 @@ import javax.servlet.http.HttpSession;
 public class BasketServlet extends HttpServlet{
 
     /**
-     * 
-     * @param tv
-     * @return
+     * Gets the items a user have in their persona basket
+     * @param tv TokenView containing authentication information of a user
+     * @return ItemView array containing item information
      */
     public static ItemView[] getItems(TokenView tv){
-        ItemView[] items = BasketFacade.getItemsRequest(tv);
-        
-        System.out.println("\nBasket items: ");
-        for(ItemView it: items){
-            System.out.println(it.toString());
-        }
 
+        ItemView[] items = BasketFacade.getItemsRequest(tv);
         return items;
     }
-    
+
+    /**
+     * Removes items from a users basket
+     * @param request HttpServletRequest containing information from a jsp
+     * @param response HttpServletResponse needed when forwarding
+     * @throws ServletException
+     * @throws IOException
+     */
     private void removeItems(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
         int size = (int)session.getAttribute("basketArraySize");
@@ -52,7 +54,14 @@ public class BasketServlet extends HttpServlet{
         
         request.getRequestDispatcher("basket.jsp").forward(request, response);
     }
-    
+
+    /**
+     *
+     * @param request HttpServletRequest containing information from a jsp
+     * @param response HttpServletResponse an argument of the doPost method
+     * @throws ServletException
+     * @throws IOException
+     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
