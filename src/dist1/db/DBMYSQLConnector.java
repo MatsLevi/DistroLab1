@@ -7,6 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -194,7 +195,7 @@ public class DBMYSQLConnector implements DBConnector{
         for(int i = 0; i < idValues.length; i++) {
             if(i == 0) {
                 idConcats.append("id = " + Integer.toString(idValues[i]) + " ");
-            } else if((idValues.length - 1) != i) {
+            } else {
                 idConcats.append("or id = " + Integer.toString(idValues[i]) + " ");
             }
         }
