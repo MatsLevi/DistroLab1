@@ -9,7 +9,12 @@ import java.util.ArrayList;
  * @author Gunnlaugur, Mats
  */
 public class BasketGet {
-    
+
+    /**
+     * Setsup a connector and tries to gett intems from the database
+     * @param userId int containing ID of user
+     * @return ItemGet array containing items
+     */
     public static ItemGet[] getItem(int userId) {
         DBConnector db = null;
         
@@ -33,7 +38,12 @@ public class BasketGet {
             return new ItemGet[1];
         }
     }
-    
+
+    /**
+     * adds itms into the basket in the database
+     * @param userId int containing user ID
+     * @param itemIdValues int array containing ID of the items
+     */
     public static void addItem(int userId, int[] itemIdValues) {
         DBConnector db = null;
         
