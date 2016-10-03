@@ -52,6 +52,15 @@
         <th>Price</th>
     </tr>
 
+    <%for(int i = 0; i < items.length;i++){
+        out.write("<tr>");
+        out.write("<td>");out.write(items[i].getName());out.write("</td>");
+        out.write("<td>");out.write(items[i].getType());out.write("</td>");
+        out.write("<td>");out.write(Integer.toString(items[i].getPrice()));out.write("</td>");
+        out.write("</tr>");
+
+    }
+    %>
 
 </table>
 
