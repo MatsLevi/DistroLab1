@@ -31,6 +31,7 @@ public class LoginServlet extends HttpServlet{
 
         if(tv.getAuthorized() == true){
             request.getRequestDispatcher("availableItems.jsp").forward(request, response);
+
         }else{
             request.getRequestDispatcher("login.jsp").forward(request, response);
         }
