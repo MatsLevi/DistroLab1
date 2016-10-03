@@ -29,7 +29,7 @@ public class BasketServlet extends HttpServlet{
         return items;
     }
     
-    private void removeItems(HttpServletRequest request) {
+    private void removeItems(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
         int size = (int)session.getAttribute("basketArraySize");
         ArrayList<Integer> itemValues = new ArrayList<>();
@@ -44,6 +44,7 @@ public class BasketServlet extends HttpServlet{
         TokenView tv = (TokenView)session.getAttribute("Token");
         
         BasketFacade.removeItemsFromBasketRequest(tv, itemValues);
+        request.getRequestDispatcher("basket.jsp").forward(request, response);
     }
     
     @Override
@@ -53,7 +54,7 @@ public class BasketServlet extends HttpServlet{
             request.getRequestDispatcher("availableItems.jsp").forward(request, response);
         }
 
-        removeItems(request);
+        removeItems(request, response);
 
     }
 }
