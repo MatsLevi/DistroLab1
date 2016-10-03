@@ -155,7 +155,9 @@ public class DBMYSQLConnector implements DBConnector{
         try{
             statement = con.createStatement();
             
-            String query = "select * from Basket where user_id = " + userId;
+            String query = "select * from Item";
+            addConcats(idConcats, userId);
+            query += idConcats.toString();
             
             System.out.println("selectar: \n" + query);
             result = statement.executeQuery(query);
@@ -240,12 +242,19 @@ public class DBMYSQLConnector implements DBConnector{
         }
     }
     
-    private void addConcats(StringBuilder idConcats, int[] idValues) {
-        for(int i = 0; i < idValues.length; i++) {
+    private void addConcats(StringBuilder idConcats, int userId) {
+        ArrayList<Integer> itemIdValues = getBasketItemIdValues(userId);
+        
+        if(itemIdValues == null)
+            return;
+        
+        idConcats.append(" where ");
+        
+        for(int i = 0; i < itemIdValues.size(); i++) {
             if(i == 0) {
-                idConcats.append("id = ").append(Integer.toString(idValues[i])).append(" ");
+                idConcats.append("id = ").append(Integer.toString(itemIdValues.get(i))).append(" ");
             } else {
-                idConcats.append("or id = ").append(Integer.toString(idValues[i])).append(" ");
+                idConcats.append("or id = ").append(Integer.toString(itemIdValues.get(i))).append(" ");
             }
         }
     }

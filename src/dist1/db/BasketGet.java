@@ -17,7 +17,7 @@ public class BasketGet {
             db = new DBMYSQLConnector();
             db.connect("store", "item_user", "123");
             
-            ArrayList<ItemGet> items = db.getItems(userId);
+            ArrayList<ItemGet> items = db.getBasketItems(userId);
             db.disconnect();
             
             ItemGet[] ig = new ItemGet[items.size()];
