@@ -14,16 +14,20 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
- *
+ * The <code>ItemServlet extends HttpServlet</code> and acts as 
+ * a servlet.
+ * 
  * @author Gunnlaugur, Mats
+ * @see javax.servlet.http.HttpServlet
  */
 @WebServlet("/itemservlet")
 public class ItemServlet extends HttpServlet{
 
     /**
-     * Gets items from the db
-     * @param tv TokenView user information
-     * @return ItemView containing item data
+     * Gets all items from the database except those within the user basket.
+     * 
+     * @param tv <code>TokenView</code> user information.
+     * @return <code>ItemView</code> containing item data.
      */
     public static ItemView[] getItems(TokenView tv){
         ItemView[] items = ItemFacade.getItemsRequest(tv);
@@ -31,17 +35,15 @@ public class ItemServlet extends HttpServlet{
     }
 
     /**
-     * Able to recieve information from a jsp and redirect it.
-     * @param request HttpServletRequest contains data from jsp
-     * @param response
-     * @throws ServletException
-     * @throws IOException
+     * Able to receive information from a jsp and redirect it.
+     * 
+     * @param request <code>HttpServletRequest</code> containing information from a jsp.
+     * @param response <code>HttpServletResponse</code> needed when forwarding.
+     * @throws ServletException thrown at servlet failures.
+     * @throws IOException thrown at input output failures.
      */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        /*if(request.getParameter("username") == null || request.getParameter("password") == null)
-            return;*/
-
         HttpSession session = request.getSession();
         int size = (int)session.getAttribute("arraySize");
         ArrayList<Integer> itemValues = new ArrayList<>();
@@ -58,6 +60,5 @@ public class ItemServlet extends HttpServlet{
         BasketFacade.addItemsToBasketRequest(tv, itemValues);
 
         request.getRequestDispatcher("basket.jsp").forward(request, response);
-
     }
 }

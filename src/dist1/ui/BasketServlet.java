@@ -12,16 +12,20 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
- *
+ * The <code>BasketServlet extends HttpServlet</code> and acts as 
+ * a servlet.
+ * 
  * @author Gunnlaugur, Mats
+ * @see javax.servlet.http.HttpServlet
  */
 @WebServlet("/basketservlet")
 public class BasketServlet extends HttpServlet{
 
     /**
-     * Gets the items a user have in their persona basket
-     * @param tv TokenView containing authentication information of a user
-     * @return ItemView array containing item information
+     * Gets the items in the user basket specified by the <code>TokenView</code>.
+     * 
+     * @param tv <code>TokenView</code> containing authentication information of a user.
+     * @return <code>ItemView</code> array containing item information.
      */
     public static ItemView[] getItems(TokenView tv){
 
@@ -30,11 +34,12 @@ public class BasketServlet extends HttpServlet{
     }
 
     /**
-     * Removes items from a users basket
-     * @param request HttpServletRequest containing information from a jsp
-     * @param response HttpServletResponse needed when forwarding
-     * @throws ServletException
-     * @throws IOException
+     * Removes items from a users basket.
+     * 
+     * @param request <code>HttpServletRequest</code> containing information from a jsp.
+     * @param response <code>HttpServletResponse</code> needed when forwarding.
+     * @throws ServletException thrown at servlet failures.
+     * @throws IOException thrown at input output failures.
      */
     private void removeItems(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
@@ -56,20 +61,19 @@ public class BasketServlet extends HttpServlet{
     }
 
     /**
-     *Recievecs data from jsp
-     * @param request HttpServletRequest containing information from a jsp
-     * @param response HttpServletResponse an argument of the doPost method
-     * @throws ServletException
-     * @throws IOException
+     * Receives data from a jsp.
+     * 
+     * @param request HttpServletRequest containing information from a jsp.
+     * @param response HttpServletResponse an argument of the doPost method.
+     * @throws ServletException thrown at servlet failures.
+     * @throws IOException thrown at input output failures.
      */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
         if(request.getParameter("button2") != null){
             request.getRequestDispatcher("availableItems.jsp").forward(request, response);
         }
 
         removeItems(request, response);
-
     }
 }

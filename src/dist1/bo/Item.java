@@ -2,7 +2,7 @@
 package dist1.bo;
 
 /**
- * The <code>Item</code> <code>class</code> consists of data concerning the item.
+ * The <code>Item class</code> consists of data concerning the item.
  * 
  * @author Mats, Gunnlaugur
  */

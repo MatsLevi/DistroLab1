@@ -9,7 +9,9 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 /**
- *
+ * The <code>DBMYSQLConnector</code> uses jdbc in order to communicate with an 
+ * sql database.
+ * 
  * @author Gunnlaugur, Mats
  */
 public class DBMYSQLConnector implements DBConnector{

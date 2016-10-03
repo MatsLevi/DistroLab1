@@ -2,7 +2,9 @@
 package dist1.ui;
 
 /**
- *
+ * The <code>ItemView class</code> consists of data concerning the 
+ * <code>ItemView</code>.
+ * 
  * @author Gunnlaugur, Mats
  */
 public class ItemView {
@@ -14,12 +16,13 @@ public class ItemView {
     private int id;
 
     /**
-     * Constructor for ItemView contains the same information as item
-     * @param name String name of item
-     * @param type String item type
-     * @param price int price of item
-     * @param quantity int quantity of intem in db
-     * @param id int identifier for items
+     * Constructs an ItemView with given parameters.
+     * 
+     * @param name <code>String</code> name of item.
+     * @param type <code>String</code> item type.
+     * @param price <code>int</code> price of item.
+     * @param quantity <code>int</code> quantity of item in database.
+     * @param id <code>int</code> identifier for item.
      */
     public ItemView(String name, String type, int price, int quantity, int id){
         this.name = name;
@@ -30,48 +33,54 @@ public class ItemView {
     }
 
     /**
-     * Gets the item name
-     * @return String containing name
+     * Gets the item name.
+     * 
+     * @return <code>String</code> containing name
      */
     public String getName() {
         return name;
     }
 
     /**
-     * Gets item type
-     * @return String containing item type
+     * Gets item type.
+     * 
+     * @return <code>String</code> containing item type.
      */
     public String getType() {
         return type;
     }
 
     /**
-     * Gets item price
-     * @return int containing the prie of the item
+     * Gets item price.
+     * 
+     * @return <code>int</code> containing the price of the item.
      */
     public int getPrice() {
         return price;
     }
 
     /**
-     * gets the quantity of the item in the database
-     * @return int containg item quantity
+     * Gets the quantity of the item in the database.
+     * 
+     * @return <code>int</code> containing item quantity.
      */
     public int getQuantity() {
         return quantity;
     }
 
     /**
-     * Gets item id
-     * @return int containg item id
+     * Gets item id.
+     * 
+     * @return <code>int</code> containing item id.
      */
     public int getId() {
         return id;
     }
 
     /**
-     * Contains the information about the item
-     * @return Sting Containg item information
+     * Returns information about the item.
+     * 
+     * @return <code>Sting</code> Containing item information.
      */
     @Override
     public String toString() {

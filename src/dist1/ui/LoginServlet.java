@@ -11,18 +11,22 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 /**
- *
+ * The <code>LoginServlet extends HttpServlet</code> and acts as 
+ * a servlet.
+ * 
  * @author Gunnlaugur, Mats
+ * @see javax.servlet.http.HttpServlet
  */
 @WebServlet("/loginservlet")
 public class LoginServlet extends HttpServlet{
 
     /**
-     * Recievecs data from jsp and redirects it
-     * @param request HttpServletRequest contains data from jsp
-     * @param response
-     * @throws ServletException
-     * @throws IOException
+     * Receives data from jsp and redirects it.
+     * 
+     * @param request <code>HttpServletRequest</code> containing information from a jsp.
+     * @param response <code>HttpServletResponse</code> needed when forwarding.
+     * @throws ServletException thrown at servlet failures.
+     * @throws IOException thrown at input output failures.
      */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
