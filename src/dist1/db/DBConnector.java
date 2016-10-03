@@ -14,6 +14,6 @@ public interface DBConnector {
     public int getUser(String username, String password);
     public boolean addUser(String username, String password);
     public ArrayList<ItemGet> getItems(int userId);
-    public ArrayList<ItemGet> getItems(int[] idValues);
+    public ArrayList<ItemGet> getBasketItems(int userId);
     public void addToBasket(int userId, int[] itemIdValues);
 }

@@ -144,7 +144,7 @@ public class DBMYSQLConnector implements DBConnector{
     }
 
     @Override
-    public ArrayList<ItemGet> getItems(int[] idValues) {
+    public ArrayList<ItemGet> getBasketItems(int userId) {
         ArrayList<ItemGet> items = new ArrayList<>();
         StringBuilder idConcats = new StringBuilder();
         Statement statement = null;
@@ -153,13 +153,9 @@ public class DBMYSQLConnector implements DBConnector{
         int price, quantity, id;
         
         try{
-            if(idValues.length == 0) throw new Exception("idValues empty");
-            
             statement = con.createStatement();
             
-            String query = "select * from Item where ";
-            addConcats(idConcats, idValues);
-            query = query + idConcats.toString();
+            String query = "select * from Basket where user_id = " + userId;
             
             System.out.println("selectar: \n" + query);
             result = statement.executeQuery(query);
@@ -174,8 +170,6 @@ public class DBMYSQLConnector implements DBConnector{
                 items.add(new ItemGet(name,type,price,quantity,id));
             }
         } catch(SQLException | NumberFormatException ex) {
-            System.out.println("Exception in getItems2: " + ex.toString());
-        } catch (Exception ex) {
             System.out.println("Exception in getItems2: " + ex.toString());
         } finally {
             if(statement != null) {

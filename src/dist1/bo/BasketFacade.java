@@ -11,14 +11,9 @@ import java.util.ArrayList;
  */
 public class BasketFacade {
 
-    /**
-     * takes an array of IDs and returns the actual items
-     * @param idValues int array containing item IDs
-     * @return array of itemviews
-     */
-    public static ItemView[] getItemsRequest(int[] idValues) {
+    public static ItemView[] getItemsRequest(TokenView tv) {
         BasketLogic bl = new BasketLogic();
-        Item[] items = bl.getItems(idValues);
+        Item[] items = bl.getItems(tv);
         
         //TODO check what happens if items is empty
         ItemView[] iv = new ItemView[items.length];

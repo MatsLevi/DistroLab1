@@ -10,20 +10,15 @@ import java.util.ArrayList;
  * @author Gunnlaugur, Mats
  */
 public class BasketLogic {
-
-    /**
-     * gets items from database
-     * @param idValues inte array containing ids
-     * @return item array
-     */
-    public Item[] getItems(int[] idValues) {
-        return BasketGet.getItem(idValues);
+    
+    public Item[] getItems(TokenView tv) {
+        return BasketGet.getItem(tv.getId());
     }
 
     /**
      * adds items to a users basket
-     * @param tv tokenview containing user info
-     * @param itemIdValues intems IDs
+     * @param tv TokenView containing user info
+     * @param itemIdValues items IDs
      */
     public void addItemsToBasket(TokenView tv, ArrayList<Integer> itemIdValues) {
         BasketGet.addItem(tv.getId(), IntegerArrayListToIntArray(itemIdValues));

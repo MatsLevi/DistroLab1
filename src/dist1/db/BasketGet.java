@@ -1,6 +1,7 @@
 
 package dist1.db;
 
+import dist1.ui.TokenView;
 import java.util.ArrayList;
 
 /**
@@ -9,14 +10,14 @@ import java.util.ArrayList;
  */
 public class BasketGet {
     
-    public static ItemGet[] getItem(int[] idValues) {
+    public static ItemGet[] getItem(int userId) {
         DBConnector db = null;
         
         try{
             db = new DBMYSQLConnector();
             db.connect("store", "item_user", "123");
             
-            ArrayList<ItemGet> items = db.getItems(idValues);
+            ArrayList<ItemGet> items = db.getItems(userId);
             db.disconnect();
             
             ItemGet[] ig = new ItemGet[items.size()];

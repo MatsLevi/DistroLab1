@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletResponse;
 public class BasketServlet extends HttpServlet{
     
     public static ItemView[] getItems(TokenView tv){
-        ItemView[] items = BasketFacade.getItemsRequest(null);
+        ItemView[] items = BasketFacade.getItemsRequest(tv);
         
         System.out.println("\nBasket items: ");
         for(ItemView it: items){
