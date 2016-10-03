@@ -10,6 +10,13 @@ import dist1.ui.TokenView;
  */
 public class ItemFacade {
     
+    /**
+     * Returns an array of all items in the database, excluding those 
+     * within the users basket.
+     * 
+     * @param tv the users TokenView.
+     * @return the items represented as ItemViews.
+     */
     public static ItemView[] getItemsRequest(TokenView tv) {
         ItemLogic il = new ItemLogic();
         Item[] items = il.getItems(tv);

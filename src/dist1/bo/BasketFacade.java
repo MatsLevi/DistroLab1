@@ -6,14 +6,16 @@ import dist1.ui.TokenView;
 import java.util.ArrayList;
 
 /**
- *
+ * The <code>BasketFacade</code> acts as a facade for the 
+ * <code>BasketServlet</code>.
+ * 
  * @author Gunnlaugur, Mats
+ * @see dist1.ui.BasketServlet
  */
 public class BasketFacade {
 
     /**
-     * Returns an array of the items in the database, excluding those that 
-     * within the users basket.
+     * Returns the users basket items.
      * 
      * @param tv the users TokenView.
      * @return the items represented as ItemViews.
