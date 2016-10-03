@@ -4,13 +4,16 @@ package dist1.db;
 import dist1.bo.Token;
 
 /**
- *
+ * The <code>TokenGet</code> acts as a connector between the <code>LoginLogic</code> 
+ * and the <code>DBConnector</code>.
+ * 
  * @author Gunnlaugur, Mats
  */
 public class TokenGet extends Token{
 
     /**
-     * Constructor
+     * Constructs a <code>TokenGet</code> with given parameters.
+     * 
      * @param id int containing id of a user
      * @param timeStamp long containing time
      */
@@ -19,17 +22,18 @@ public class TokenGet extends Token{
     }
 
     /**
-     * Constructor simply calling super
+     * Constructs an empty <code>TokenGet</code>.
      */
     private TokenGet() {
         super();
     }
 
     /**
-     * connects to the database and tries to authenticate the user
-     * @param username String containg user name
-     * @param pw String containg user password
-     * @return returns valid token if sucsesfull and a unvalid one if authentication failed
+     * Connects to the database and tries to authenticate the user.
+     * 
+     * @param username <code>String</code> containing the user name.
+     * @param pw <code>String</code> containing the user password.
+     * @return returns valid token if successful and a unvalid one if authentication failed.
      */
     public static TokenGet getToken(String username, String pw) {
         DBConnector db = null;

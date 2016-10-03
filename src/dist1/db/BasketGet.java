@@ -1,19 +1,24 @@
 
 package dist1.db;
 
-import dist1.ui.TokenView;
 import java.util.ArrayList;
 
 /**
- *
+ * The <code>BasketGet</code> acts as a connector between the <code>BasketLogic</code> 
+ * and the <code>DBConnector</code>.
+ * 
  * @author Gunnlaugur, Mats
+ * @see dist1.bo.BasketLogic
+ * @see dist1.db.DBConnector
  */
 public class BasketGet {
 
     /**
-     * Setsup a connector and tries to gett intems from the database
-     * @param userId int containing ID of user
-     * @return ItemGet array containing items
+     * Sets up a <code>DBConnector</code> and tries to get the users items from 
+     * the database.
+     * 
+     * @param userId <code>int</code> containing the users id.
+     * @return <code>ItemGet</code> array containing the items.
      */
     public static ItemGet[] getItem(int userId) {
         DBConnector db = null;
@@ -40,9 +45,10 @@ public class BasketGet {
     }
 
     /**
-     * adds itms into the basket in the database
-     * @param userId int containing user ID
-     * @param itemIdValues int array containing ID of the items
+     * Adds items into the basket in the database.
+     * 
+     * @param userId <code>int</code> containing user id.
+     * @param itemIdValues <code>int</code> array containing ids of the items to be added.
      */
     public static void addItems(int userId, int[] itemIdValues) {
         DBConnector db = null;
@@ -61,9 +67,10 @@ public class BasketGet {
     }
 
     /**
-     * Connects to the database and removes one or more items from a users basket
-     * @param userId int identifier for the user
-     * @param itemIdValues int array containing item identifiers
+     * Connects to the database and removes one or more items from a users basket.
+     * 
+     * @param userId <code>int</code> identifier for the user.
+     * @param itemIdValues <code>int</code> array containing item identifiers.
      */
     public static void removeItems(int userId, int[] itemIdValues) {
         DBConnector db = null;

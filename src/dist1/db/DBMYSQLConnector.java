@@ -28,6 +28,15 @@ public class DBMYSQLConnector implements DBConnector{
         username = "Unknown"; pw = "NotSet";
     }
     
+    /**
+     * Connects the database user to the specified database. It should be noted 
+     * that this user is only used for database connections, not shop logins.
+     * 
+     * @param dbName the database name.
+     * @param username the database user name.
+     * @param password the database user password.
+     * @throws java.sql.SQLException thrown if connection fails.
+     */
     @Override
     public void connect(String dbName, String username, String password) throws SQLException {
         this.username = username; this.pw = password;
@@ -37,6 +46,9 @@ public class DBMYSQLConnector implements DBConnector{
         System.out.println("Connected to db");
     }
 
+    /**
+     * Disconnects the connection to the database.
+     */
     @Override
     public void disconnect() {
         try{
@@ -45,6 +57,13 @@ public class DBMYSQLConnector implements DBConnector{
         } catch (SQLException ex) {}
     }
 
+    /**
+     * Returns a user id if the user is found in the database.
+     * 
+     * @param username the user to search for in the database.
+     * @param password the password to search for in the database.
+     * @return returns -1 if the user is not found, else a user id.
+     */
     @Override
     public int getUser(String username, String password) {
         Statement statement = null;
@@ -75,6 +94,14 @@ public class DBMYSQLConnector implements DBConnector{
         }
     }
 
+    /**
+     * Tries to add the specified user to the database. If the user already 
+     * exists the method returns <code>false</code>.
+     * 
+     * @param username the user to be added to the database.
+     * @param password the password to be added to the database.
+     * @return <code>true</code> if the user is added.
+     */
     @Override
     public boolean addUser(String username, String password) {
         Statement statement = null;
@@ -97,6 +124,13 @@ public class DBMYSQLConnector implements DBConnector{
         }
     }
 
+    /**
+     * Gets all the items within the database, except those that are registered in 
+     * the user basket.
+     * 
+     * @param userId the users id.
+     * @return returns all items except those within the users basket.
+     */
     @Override
     public ArrayList<ItemGet> getItems(int userId) {
         ArrayList<ItemGet> items = new ArrayList<>();
@@ -143,6 +177,12 @@ public class DBMYSQLConnector implements DBConnector{
         return items;
     }
 
+    /**
+     * Gets all items within the specified users basket.
+     * 
+     * @param userId the users id.
+     * @return items within the users basket.
+     */
     @Override
     public ArrayList<ItemGet> getBasketItems(int userId) {
         ArrayList<ItemGet> items = new ArrayList<>();
@@ -151,7 +191,7 @@ public class DBMYSQLConnector implements DBConnector{
         ResultSet result = null;
         String name, type;
         int price, quantity, id;
-        boolean basketIsEmpty = false;
+        boolean basketIsEmpty;
         
         try{
             statement = con.createStatement();
@@ -266,6 +306,13 @@ public class DBMYSQLConnector implements DBConnector{
         return false;
     }
 
+    /**
+     * Adds items to the user basket based on the item ids stored in the 
+     * <code>itemIdValues</code>.
+     * 
+     * @param userId the user id.
+     * @param itemIdValues the ids of the items to be added.
+     */
     @Override
     public void addToBasket(int userId, int[] itemIdValues) {
         Statement statement = null;
@@ -289,6 +336,13 @@ public class DBMYSQLConnector implements DBConnector{
         }
     }
 
+    /**
+     * Removes items from the user basket based on the item ids stored in the 
+     * <code>itemIdValues</code>.
+     * 
+     * @param userId the user id.
+     * @param itemIdValues the ids of the items to be removed.
+     */
     @Override
     public void removeFromBasket(int userId, int[] itemIdValues) {
         Statement statement = null;

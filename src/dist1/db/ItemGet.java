@@ -4,31 +4,40 @@ import dist1.bo.Item;
 import java.util.ArrayList;
 
 /**
- *
+ * The <code>ItemGet</code> acts as a connector between the <code>ItemLogic</code> 
+ * and the <code>DBConnector</code>.
+ * 
  * @author Mats, Gunnlaugur
+ * @see dist1.bo.ItemLogic
+ * @see dist1.db.DBConnector
  */
 public class ItemGet extends Item {
 
     /**
-     * Constructor taking multiple variables
-     * @param name String containing name of the item
-     * @param type String containing item type
-     * @param price int containing item price
-     * @param quantity int containing quantity of intems in db
-     * @param id int containing uniqe id of item
+     * Constructs an <code>ItemGet</code> taking multiple variables.
+     * 
+     * @param name <code>String</code> containing name of the item.
+     * @param type <code>String</code> containing item type.
+     * @param price <code>int</code> containing item price.
+     * @param quantity <code>int</code> containing quantity of items in db.
+     * @param id <code>int</code> containing unique id of item.
      */
     protected ItemGet(String name, String type, int price, int quantity, int id) {
         super(name, type, price, quantity, id);
     }
 
+    /**
+     * Constructs an empty <code>ItemGet</code>.
+     */
     protected ItemGet() {
         super();
     }
 
     /**
-     * Tries to connect to db and get items
-     * @param userId int containing uniqe ID of user
-     * @return returns ItemGet array containing items
+     * Tries to connect to the db and get all items that are not in the user basket.
+     * 
+     * @param userId <code>int</code> containing unique id of the user.
+     * @return returns <code>ItemGet</code> array containing the retrieved items.
      */
     public static ItemGet[] getItem(int userId) {
         DBConnector db = null;
