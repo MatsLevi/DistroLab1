@@ -10,7 +10,7 @@ import java.util.ArrayList;
 public class ItemGet extends Item {
 
     /**
-     * Constructor containing multiple variables
+     * Constructor taking multiple variables
      * @param name String containing name of the item
      * @param type String containing item type
      * @param price int containing item price

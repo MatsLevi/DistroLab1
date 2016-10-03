@@ -6,6 +6,12 @@ package dist1.db;
  */
 public class RegisterUser {
 
+    /**
+     * Tries to connect to the db and register a user
+     * @param username String contining name of the user
+     * @param pw String containing users password
+     * @return boolean true for succses and false for failure
+     */
     public static boolean registerUser(String username, String pw) {
         DBConnector db = null;
         boolean addSuccess;

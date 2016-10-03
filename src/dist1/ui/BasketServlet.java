@@ -17,7 +17,12 @@ import javax.servlet.http.HttpSession;
  */
 @WebServlet("/basketservlet")
 public class BasketServlet extends HttpServlet{
-    
+
+    /**
+     * 
+     * @param tv
+     * @return
+     */
     public static ItemView[] getItems(TokenView tv){
         ItemView[] items = BasketFacade.getItemsRequest(tv);
         
