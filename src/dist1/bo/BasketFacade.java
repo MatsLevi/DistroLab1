@@ -2,6 +2,8 @@
 package dist1.bo;
 
 import dist1.ui.ItemView;
+import dist1.ui.TokenView;
+import java.util.ArrayList;
 
 /**
  *
@@ -20,5 +22,10 @@ public class BasketFacade {
         }
         
         return iv;
+    }
+    
+    public static void addItemsToBasketRequest(TokenView tv, ArrayList<Integer> itemIdValues) {
+        BasketLogic bl = new BasketLogic();
+        bl.addItemsToBasket(tv, itemIdValues);
     }
 }

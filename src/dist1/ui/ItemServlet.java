@@ -1,6 +1,7 @@
 
 package dist1.ui;
 
+import dist1.bo.BasketFacade;
 import dist1.bo.ItemFacade;
 
 import java.io.IOException;
@@ -45,6 +46,10 @@ public class ItemServlet extends HttpServlet{
              itemValues.add(Integer.parseInt(request.getParameter(Integer.toString(i))));
             } catch(NumberFormatException e) {}
         }
+        
+        TokenView tv = (TokenView)session.getAttribute("Token");
+        
+        BasketFacade.addItemsToBasketRequest(tv, itemValues);
 
         request.getRequestDispatcher("basket.jsp").forward(request, response);
 
