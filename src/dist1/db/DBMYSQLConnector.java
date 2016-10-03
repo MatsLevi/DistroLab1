@@ -7,9 +7,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -257,5 +254,10 @@ public class DBMYSQLConnector implements DBConnector{
                 idConcats.append("or id = ").append(Integer.toString(idValues[i])).append(" ");
             }
         }
+    }
+
+    @Override
+    public void addToBasket(int userId, int[] itemIdValues) {
+        
     }
 }

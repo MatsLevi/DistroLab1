@@ -32,4 +32,20 @@ public class BasketGet {
             return new ItemGet[1];
         }
     }
+    
+    public static void addItem(int userId, int[] itemIdValues) {
+        DBConnector db = null;
+        
+        try{
+            db = new DBMYSQLConnector();
+            db.connect("store", "item_user", "123");
+            
+            db.addToBasket(userId, itemIdValues);
+            db.disconnect();
+        } catch(Exception ex) {
+            System.out.println("addItem5: " + ex.toString());
+            if(db != null) 
+                db.disconnect();
+        }
+    }
 }

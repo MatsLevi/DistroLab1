@@ -16,6 +16,15 @@ public class BasketLogic {
     }
     
     public void addItemsToBasket(TokenView tv, ArrayList<Integer> itemIdValues) {
+        BasketGet.addItem(tv.getId(), IntegerArrayListToIntArray(itemIdValues));
+    }
+    
+    private int[] IntegerArrayListToIntArray(ArrayList<Integer> integers) {
+        int[] ints = new int[integers.size()];
         
+        for(int i = 0; i < integers.size(); i++) {
+            ints[i] = integers.get(i);
+        }
+        return ints;
     }
 }
