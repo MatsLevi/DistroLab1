@@ -36,11 +36,10 @@ public class ItemServlet extends HttpServlet{
         HttpSession session = request.getSession();
         int size = (int)session.getAttribute("arraySize");
 
-        System.out.println("In servlet basket printout:");
+        System.out.println("In itemServlet: ");
         for(int i = 0; i < size; i++){
             System.out.println("Item ID: " +request.getParameter(Integer.toString(i)));
         }
-
 
         request.getRequestDispatcher("basket.jsp").forward(request, response);
 
